@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2026-07-30
+
+### Added
+
+- Reusable `Access Application And Validate Health` keyword for shared environment health checks.
+- Reusable `Validate Application Initial Page` keyword for initial-page visibility validation.
+- Business-level availability keywords for HOT, BP WEB, and BHUB.
+- Automation Diary #003 documentation about DRY refactoring and reusable keywords.
+
+### Changed
+
+- HOT, BP WEB, and BHUB access keywords now reuse the same technical health-check behavior.
+- Smoke tests now express business intent through one application-level availability keyword.
+- README now reflects the reusable-keyword milestone and version `v0.3.0`.
+
 ## [0.2.0] - 2026-07-29
 
 ### Added

@@ -26,3 +26,15 @@ Validate Page Has No Known Technical Error
     Should Not Contain    ${body_text}    Internal Server Error
     Should Not Contain    ${body_text}    500 Server Error
     Should Not Contain    ${body_text}    Application Error
+
+Access Application And Validate Health
+    [Documentation]    Opens an application and performs the reusable environment health checks.
+    [Arguments]    ${url}    ${expected_url_fragment}
+    Open Application    ${url}
+    Validate Current URL    ${expected_url_fragment}
+    Validate Page Has No Known Technical Error
+
+Validate Application Initial Page
+    [Documentation]    Confirms that the application's main page element is visible.
+    [Arguments]    ${page_locator}
+    Wait For Elements State    ${page_locator}    visible

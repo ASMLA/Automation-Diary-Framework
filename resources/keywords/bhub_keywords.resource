@@ -6,9 +6,12 @@ Resource    ../pages/bhub_page.resource
 
 *** Keywords ***
 Access BHUB
-    Open Application    ${BHUB_URL}
-    Validate Current URL    bhubhml.globalhitss.com.br
-    Validate Page Has No Known Technical Error
+    Access Application And Validate Health    ${BHUB_URL}    bhubhml.globalhitss.com.br
 
 Validate BHUB Initial Page
-    Wait For Elements State    ${BHUB_BODY}    visible
+    Validate Application Initial Page    ${BHUB_BODY}
+
+Validate BHUB Availability
+    [Documentation]    Validates the complete BHUB smoke-test business behavior using reusable keywords.
+    Access BHUB
+    Validate BHUB Initial Page

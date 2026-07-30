@@ -9,5 +9,4 @@ Force Tags       smoke    bhub    critical
 *** Test Cases ***
 BHUB Should Be Available
     [Documentation]    Confirms that BHUB responds, opens the expected environment, and displays its initial page.
-    Access BHUB
-    Validate BHUB Initial Page
+    Validate BHUB Availability

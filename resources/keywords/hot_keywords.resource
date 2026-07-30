@@ -6,12 +6,15 @@ Resource    ../pages/hot_page.resource
 
 *** Keywords ***
 Access HOT
-    Open Application    ${HOT_URL}
-    Validate Current URL    hotcorphml.globalhitss.com.br
-    Validate Page Has No Known Technical Error
+    Access Application And Validate Health    ${HOT_URL}    hotcorphml.globalhitss.com.br
 
 Validate HOT Initial Page
-    Wait For Elements State    ${HOT_BODY}    visible
+    Validate Application Initial Page    ${HOT_BODY}
+
+Validate HOT Availability
+    [Documentation]    Validates the complete HOT smoke-test business behavior using reusable keywords.
+    Access HOT
+    Validate HOT Initial Page
 
 Start Demand Creation
     [Arguments]    ${title}

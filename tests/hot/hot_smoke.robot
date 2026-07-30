@@ -9,5 +9,4 @@ Force Tags       smoke    hot    critical
 *** Test Cases ***
 HOT Should Be Available
     [Documentation]    Confirms that HOT responds, opens the expected environment, and displays its initial page.
-    Access HOT
-    Validate HOT Initial Page
+    Validate HOT Availability

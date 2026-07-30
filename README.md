@@ -1,6 +1,6 @@
 # HOT • BP WEB • BHUB Automation Framework
 
-**Project Status:** Foundation & Smoke Tests
+**Project Status:** Reusable Keywords & DRY Refactoring
 
 ---
 
@@ -32,7 +32,7 @@ Each milestone in this repository reflects a real engineering decision made duri
 
 # Current Phase
 
-The framework foundation has been established, and the first Smoke Test strategy has been implemented.
+The framework foundation and Smoke Test strategy are established. The current milestone refactors repeated behavior into reusable technical and business keywords.
 
 Current objectives:
 
@@ -41,7 +41,8 @@ Current objectives:
 - Validate BHUB availability
 - Execute fast health checks
 - Detect environment issues before regression testing
-- Continue evolving the framework architecture
+- Reduce duplicated automation behavior
+- Keep tests focused on readable business intent
 
 Smoke tests provide the first layer of confidence before executing larger automation suites.
 
@@ -56,8 +57,8 @@ Each publication represents a real milestone in the evolution of this framework.
 | Episode | Status |
 |----------|--------|
 | ✅ #001 – Planning Before Coding | Completed |
-| 🔄 #002 – Why I Always Start with Smoke Tests | Current |
-| ⏳ #003 – Building Reusable Keywords Instead of Duplicated Code | Next |
+| ✅ #002 – Why I Always Start with Smoke Tests | Completed |
+| 🔄 #003 – Building Reusable Keywords Instead of Duplicated Code | Current |
 | ⏳ #004 – The Importance of a Clean Project Structure | Planned |
 | ⏳ #005 – Choosing the Right Locator Strategy | Planned |
 | ⏳ #006 – Why Documentation Is Part of Automation | Planned |
@@ -71,7 +72,7 @@ Each publication represents a real milestone in the evolution of this framework.
 |---------------|-------------|
 | 📘 [#001 – Planning Before Coding](docs/automation-diary/001-planning-before-coding.md) | Framework planning and architecture decisions |
 | 📘 [#002 – Why I Always Start with Smoke Tests](docs/automation-diary/002-smoke-tests.md) | Smoke testing strategy and first executable milestone |
-| 📄 #003 – Building Reusable Keywords Instead of Duplicated Code | Coming Soon |
+| 📘 [#003 – Building Reusable Keywords Instead of Duplicated Code](docs/automation-diary/003-reusable-keywords.md) | DRY refactoring and reusable business keywords |
 | 📄 #004 – The Importance of a Clean Project Structure | Coming Soon |
 | 📄 #005 – Choosing the Right Locator Strategy | Coming Soon |
 | 📄 #006 – Why Documentation Is Part of Automation | Coming Soon |
@@ -109,7 +110,7 @@ Each publication represents a real milestone in the evolution of this framework.
 - ✅ Project Planning
 - ✅ Framework Foundation
 - ✅ Smoke Test Strategy
-- ⏳ Reusable Keywords
+- ✅ Reusable Keywords
 - ⏳ Clean Project Structure
 - ⏳ Locator Strategy
 - ⏳ Documentation
@@ -124,16 +125,17 @@ Each publication represents a real milestone in the evolution of this framework.
 
 # Latest Milestone
 
-## Automation Diary #002
+## Automation Diary #003
 
-### Why I Always Start with Smoke Tests
+### Building Reusable Keywords Instead of Duplicated Code
 
 Implemented:
 
-- Independent Smoke Test suites
-- Tagged Smoke execution
-- Fast environment validation
-- Foundation for future regression testing
+- Shared application health-check keyword
+- Reusable initial-page validation
+- Application-level business keywords
+- DRY refactoring across HOT, BP WEB, and BHUB smoke tests
+- Cleaner tests focused on business intent
 
 ---
 
@@ -143,6 +145,7 @@ Implemented:
 |----------|------------------|-------------|
 | v0.1.0 | #001 | Framework planning and architecture |
 | v0.2.0 | #002 | Smoke Test strategy |
+| v0.3.0 | #003 | Reusable keywords and DRY refactoring |
 
 ---
 
@@ -166,6 +169,6 @@ Senior QA Automation Engineer
 
 ✅ #001 → Planning Before Coding
 
-🔄 #002 → Why I Always Start with Smoke Tests
+✅ #002 → Why I Always Start with Smoke Tests
 
-⏳ #003 → Building Reusable Keywords Instead of Duplicated Code
+🔄 #003 → Building Reusable Keywords Instead of Duplicated Code
