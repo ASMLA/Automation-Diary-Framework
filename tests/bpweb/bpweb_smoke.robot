@@ -9,5 +9,4 @@ Force Tags       smoke    bpweb    critical
 *** Test Cases ***
 BP WEB Should Be Available
     [Documentation]    Confirms that BP WEB responds, opens the expected environment, and displays its initial page.
-    Access BP WEB
-    Validate BP WEB Initial Page
+    Validate BP WEB Availability
