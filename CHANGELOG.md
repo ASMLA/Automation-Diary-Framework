@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2026-07-30
+
+### Changed
+
+- Reorganized shared technical keywords under `resources/keywords/common`.
+- Reorganized application-specific keywords under `resources/keywords/applications`.
+- Renamed `common.resource` to `browser_keywords.resource` to communicate its responsibility.
+- Updated all resource imports across HOT, BP WEB, BHUB, and E2E suites.
+- Updated README with the clean project structure milestone.
+
+### Added
+
+- Automation Diary #004 documentation.
+- Explicit responsibility map for pages, keywords, variables, data, tests, scripts, and documentation.
+
+### Preserved
+
+- Existing Smoke Test and template behavior.
+- Reusable business keywords introduced in v0.3.0.
+
 ## [0.3.0] - 2026-07-30
 
 ### Added
