@@ -1,6 +1,6 @@
 # HOT • BP WEB • BHUB Automation Framework
 
-**Project Status:** Reusable Keywords & DRY Refactoring
+**Project Status:** Clean and Scalable Project Structure
 
 ---
 
@@ -32,7 +32,7 @@ Each milestone in this repository reflects a real engineering decision made duri
 
 # Current Phase
 
-The framework foundation and Smoke Test strategy are established. The current milestone refactors repeated behavior into reusable technical and business keywords.
+The framework foundation, Smoke Test strategy, and reusable keyword layer are established. The current milestone organizes the project by responsibility so that the architecture is easier to navigate and scale.
 
 Current objectives:
 
@@ -43,6 +43,8 @@ Current objectives:
 - Detect environment issues before regression testing
 - Reduce duplicated automation behavior
 - Keep tests focused on readable business intent
+- Separate shared keywords from application-specific behavior
+- Make pages, variables, data, resources, and tests easy to locate
 
 Smoke tests provide the first layer of confidence before executing larger automation suites.
 
@@ -58,8 +60,8 @@ Each publication represents a real milestone in the evolution of this framework.
 |----------|--------|
 | ✅ #001 – Planning Before Coding | Completed |
 | ✅ #002 – Why I Always Start with Smoke Tests | Completed |
-| 🔄 #003 – Building Reusable Keywords Instead of Duplicated Code | Current |
-| ⏳ #004 – The Importance of a Clean Project Structure | Planned |
+| ✅ #003 – Building Reusable Keywords Instead of Duplicated Code | Completed |
+| 🔄 #004 – The Importance of a Clean Project Structure | Current |
 | ⏳ #005 – Choosing the Right Locator Strategy | Planned |
 | ⏳ #006 – Why Documentation Is Part of Automation | Planned |
 | ⏳ #007 – Lessons Learned After the First Sprint | Planned |
@@ -73,7 +75,7 @@ Each publication represents a real milestone in the evolution of this framework.
 | 📘 [#001 – Planning Before Coding](docs/automation-diary/001-planning-before-coding.md) | Framework planning and architecture decisions |
 | 📘 [#002 – Why I Always Start with Smoke Tests](docs/automation-diary/002-smoke-tests.md) | Smoke testing strategy and first executable milestone |
 | 📘 [#003 – Building Reusable Keywords Instead of Duplicated Code](docs/automation-diary/003-reusable-keywords.md) | DRY refactoring and reusable business keywords |
-| 📄 #004 – The Importance of a Clean Project Structure | Coming Soon |
+| 📘 [#004 – The Importance of a Clean Project Structure](docs/automation-diary/004-clean-project-structure.md) | Separation of responsibilities and scalable folder organization |
 | 📄 #005 – Choosing the Right Locator Strategy | Coming Soon |
 | 📄 #006 – Why Documentation Is Part of Automation | Coming Soon |
 | 📄 #007 – Lessons Learned After the First Sprint | Coming Soon |
@@ -89,6 +91,8 @@ Each publication represents a real milestone in the evolution of this framework.
 │   └── automation-diary
 ├── resources
 │   ├── keywords
+│   │   ├── applications
+│   │   └── common
 │   ├── pages
 │   └── variables
 ├── results
@@ -111,7 +115,7 @@ Each publication represents a real milestone in the evolution of this framework.
 - ✅ Framework Foundation
 - ✅ Smoke Test Strategy
 - ✅ Reusable Keywords
-- ⏳ Clean Project Structure
+- ✅ Clean Project Structure
 - ⏳ Locator Strategy
 - ⏳ Documentation
 - ⏳ HOT Business Flows
@@ -125,17 +129,17 @@ Each publication represents a real milestone in the evolution of this framework.
 
 # Latest Milestone
 
-## Automation Diary #003
+## Automation Diary #004
 
-### Building Reusable Keywords Instead of Duplicated Code
+### The Importance of a Clean Project Structure
 
 Implemented:
 
-- Shared application health-check keyword
-- Reusable initial-page validation
-- Application-level business keywords
-- DRY refactoring across HOT, BP WEB, and BHUB smoke tests
-- Cleaner tests focused on business intent
+- Shared technical keywords moved to `resources/keywords/common`
+- Application-specific keywords moved to `resources/keywords/applications`
+- Resource imports updated across all suites
+- Clear ownership for pages, variables, data, tests, scripts, and documentation
+- Existing test behavior preserved
 
 ---
 
@@ -146,6 +150,7 @@ Implemented:
 | v0.1.0 | #001 | Framework planning and architecture |
 | v0.2.0 | #002 | Smoke Test strategy |
 | v0.3.0 | #003 | Reusable keywords and DRY refactoring |
+| v0.4.0 | #004 | Clean project structure and separation of responsibilities |
 
 ---
 
@@ -171,4 +176,6 @@ Senior QA Automation Engineer
 
 ✅ #002 → Why I Always Start with Smoke Tests
 
-🔄 #003 → Building Reusable Keywords Instead of Duplicated Code
+✅ #003 → Building Reusable Keywords Instead of Duplicated Code
+
+🔄 #004 → The Importance of a Clean Project Structure

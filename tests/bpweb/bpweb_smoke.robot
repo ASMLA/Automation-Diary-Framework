@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Validates that BP WEB is available and displays its initial page without known technical errors.
-Resource         ../../resources/keywords/common.resource
-Resource         ../../resources/keywords/bpweb_keywords.resource
+Resource         ../../resources/keywords/common/browser_keywords.resource
+Resource         ../../resources/keywords/applications/bpweb_keywords.resource
 Test Setup       Open Browser Session
 Test Teardown    Close Browser Session
 Force Tags       smoke    bpweb    critical
