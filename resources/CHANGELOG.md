@@ -2,29 +2,6 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.7.0] - 2026-07-31
-
-### Added
-
-- Automation Diary #007 documentation with the first sprint lessons learned.
-- Project retrospective covering engineering decisions, outcomes, challenges, and improvement opportunities.
-- Roadmap for the next development phase.
-- Current project status and Sprint 1 summary in the README.
-
-### Changed
-
-- README updated to version `v0.7.0`.
-- Automation Diary #006 marked as completed and #007 marked as current.
-- Version history expanded through `v0.7.0`.
-- Documentation navigation expanded with links to the retrospective and roadmap.
-
-### Preserved
-
-- Existing Smoke Test behavior.
-- Locator strategy introduced in v0.5.0.
-- Reusable keyword layers and clean project structure.
-- Architecture, onboarding, execution, contribution, and troubleshooting documentation introduced in v0.6.0.
-
 ## [0.6.0] - 2026-07-30
 
 ### Added
@@ -124,3 +101,10 @@ All notable changes to this project will be documented in this file.
 - Initial Robot Framework and Browser Library project structure.
 - Initial project planning and architecture.
 - Initial templates for HOT demand and HOT–BP WEB integration flows.
+
+
+## v0.7.0
+- Sprint retrospective
+- Lessons learned
+- Project roadmap
+- Updated README
