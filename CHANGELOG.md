@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2026-07-30
+
+### Added
+
+- Framework architecture and execution-flow documentation.
+- Cross-platform onboarding instructions for Windows, Linux, and macOS.
+- Execution guide for full and application-specific Smoke Tests.
+- Contribution guide explaining how to add tests without mixing responsibilities.
+- Troubleshooting guide for Node.js, Browser Library, VPN, environment, and locator failures.
+- Automation Diary #006 documentation.
+
+### Changed
+
+- README converted into a concise project entry point with links to detailed technical guides.
+- Documentation structure expanded into architecture, getting-started, guides, and troubleshooting areas.
+
+### Preserved
+
+- Existing Smoke Test behavior.
+- Locator strategy introduced in v0.5.0.
+- Clean architecture and reusable keyword layers from previous milestones.
+
 ## [0.5.0] - 2026-07-30
 
 ### Added
