@@ -1,6 +1,6 @@
 # HOT • BP WEB • BHUB Automation Framework
 
-**Project Status:** Clean and Scalable Project Structure
+**Project Status:** Stable and Explicit Locator Strategy
 
 ---
 
@@ -32,7 +32,7 @@ Each milestone in this repository reflects a real engineering decision made duri
 
 # Current Phase
 
-The framework foundation, Smoke Test strategy, and reusable keyword layer are established. The current milestone organizes the project by responsibility so that the architecture is easier to navigate and scale.
+The framework foundation, Smoke Test strategy, reusable keyword layer, and clean project structure are established. The current milestone defines how stable locators are selected, documented, and resolved.
 
 Current objectives:
 
@@ -45,6 +45,8 @@ Current objectives:
 - Keep tests focused on readable business intent
 - Separate shared keywords from application-specific behavior
 - Make pages, variables, data, resources, and tests easy to locate
+- Use explicit selector engines and a documented locator priority
+- Reduce flaky behavior caused by ambiguous or unstable selectors
 
 Smoke tests provide the first layer of confidence before executing larger automation suites.
 
@@ -61,8 +63,8 @@ Each publication represents a real milestone in the evolution of this framework.
 | ✅ #001 – Planning Before Coding | Completed |
 | ✅ #002 – Why I Always Start with Smoke Tests | Completed |
 | ✅ #003 – Building Reusable Keywords Instead of Duplicated Code | Completed |
-| 🔄 #004 – The Importance of a Clean Project Structure | Current |
-| ⏳ #005 – Choosing the Right Locator Strategy | Planned |
+| ✅ #004 – The Importance of a Clean Project Structure | Completed |
+| 🔄 #005 – Choosing the Right Locator Strategy | Current |
 | ⏳ #006 – Why Documentation Is Part of Automation | Planned |
 | ⏳ #007 – Lessons Learned After the First Sprint | Planned |
 
@@ -76,7 +78,7 @@ Each publication represents a real milestone in the evolution of this framework.
 | 📘 [#002 – Why I Always Start with Smoke Tests](docs/automation-diary/002-smoke-tests.md) | Smoke testing strategy and first executable milestone |
 | 📘 [#003 – Building Reusable Keywords Instead of Duplicated Code](docs/automation-diary/003-reusable-keywords.md) | DRY refactoring and reusable business keywords |
 | 📘 [#004 – The Importance of a Clean Project Structure](docs/automation-diary/004-clean-project-structure.md) | Separation of responsibilities and scalable folder organization |
-| 📄 #005 – Choosing the Right Locator Strategy | Coming Soon |
+| 📘 [#005 – Choosing the Right Locator Strategy](docs/automation-diary/005-locator-strategy.md) | Locator hierarchy, explicit selector engines, and flaky-test prevention |
 | 📄 #006 – Why Documentation Is Part of Automation | Coming Soon |
 | 📄 #007 – Lessons Learned After the First Sprint | Coming Soon |
 
@@ -116,7 +118,7 @@ Each publication represents a real milestone in the evolution of this framework.
 - ✅ Smoke Test Strategy
 - ✅ Reusable Keywords
 - ✅ Clean Project Structure
-- ⏳ Locator Strategy
+- ✅ Locator Strategy
 - ⏳ Documentation
 - ⏳ HOT Business Flows
 - ⏳ BP WEB Business Flows
@@ -129,17 +131,18 @@ Each publication represents a real milestone in the evolution of this framework.
 
 # Latest Milestone
 
-## Automation Diary #004
+## Automation Diary #005
 
-### The Importance of a Clean Project Structure
+### Choosing the Right Locator Strategy
 
 Implemented:
 
-- Shared technical keywords moved to `resources/keywords/common`
-- Application-specific keywords moved to `resources/keywords/applications`
-- Resource imports updated across all suites
-- Clear ownership for pages, variables, data, tests, scripts, and documentation
-- Existing test behavior preserved
+- Explicit `css` and `text` selector engines
+- Documented locator priority from stable attributes to last-resort XPath
+- Application page-root locator naming
+- Ordered primary and fallback locators for the HOT demand title field
+- Reusable fallback resolution through `Get First Visible Locator`
+- Flaky-test prevention guidance based on real DOM contracts
 
 ---
 
@@ -151,6 +154,7 @@ Implemented:
 | v0.2.0 | #002 | Smoke Test strategy |
 | v0.3.0 | #003 | Reusable keywords and DRY refactoring |
 | v0.4.0 | #004 | Clean project structure and separation of responsibilities |
+| v0.5.0 | #005 | Explicit locator strategy and controlled fallback resolution |
 
 ---
 
@@ -178,4 +182,6 @@ Senior QA Automation Engineer
 
 ✅ #003 → Building Reusable Keywords Instead of Duplicated Code
 
-🔄 #004 → The Importance of a Clean Project Structure
+✅ #004 → The Importance of a Clean Project Structure
+
+🔄 #005 → Choosing the Right Locator Strategy
