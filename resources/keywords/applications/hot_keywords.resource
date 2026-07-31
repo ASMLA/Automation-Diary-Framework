@@ -9,7 +9,7 @@ Access HOT
     Access Application And Validate Health    ${HOT_URL}    hotcorphml.globalhitss.com.br
 
 Validate HOT Initial Page
-    Validate Application Initial Page    ${HOT_BODY}
+    Validate Application Initial Page    ${HOT_PAGE_ROOT}
 
 Validate HOT Availability
     [Documentation]    Validates the complete HOT smoke-test business behavior using reusable keywords.
@@ -18,8 +18,10 @@ Validate HOT Availability
 
 Start Demand Creation
     [Arguments]    ${title}
-    Wait For Elements State    ${HOT_DEMAND_TITLE}    visible
-    Fill Text    ${HOT_DEMAND_TITLE}    ${title}
+    ${title_locator}=    Get First Visible Locator
+    ...    ${HOT_DEMAND_TITLE_PRIMARY}
+    ...    ${HOT_DEMAND_TITLE_FALLBACK}
+    Fill Text    ${title_locator}    ${title}
 
 Save Demand As Draft
     Click    ${HOT_SAVE_DRAFT}

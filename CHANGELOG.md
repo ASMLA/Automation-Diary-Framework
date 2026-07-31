@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] - 2026-07-30
+
+### Added
+
+- Documented locator priority for stable automation attributes, accessible roles, native attributes, exact text, CSS, and last-resort XPath.
+- Reusable `Get First Visible Locator` keyword for ordered primary-to-fallback resolution.
+- Automation Diary #005 documentation about locator strategy and flaky-test prevention.
+
+### Changed
+
+- Declared selector engines explicitly in all page resources.
+- Renamed generic body locators to application page-root locators.
+- Replaced the combined HOT title CSS selector with separate primary and fallback locators.
+- Updated README with the locator-strategy milestone.
+
+### Preserved
+
+- Existing Smoke Test behavior and clean project structure.
+- Business keyword layer introduced in v0.3.0.
+
 ## [0.4.0] - 2026-07-30
 
 ### Changed

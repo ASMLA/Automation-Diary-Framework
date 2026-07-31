@@ -35,6 +35,18 @@ Access Application And Validate Health
     Validate Page Has No Known Technical Error
 
 Validate Application Initial Page
-    [Documentation]    Confirms that the application's main page element is visible.
+    [Documentation]    Confirms that the application's stable page-root locator is visible.
     [Arguments]    ${page_locator}
     Wait For Elements State    ${page_locator}    visible
+
+Get First Visible Locator
+    [Documentation]    Returns the first visible locator from an ordered primary-to-fallback list.
+    [Arguments]    @{locators}
+    FOR    ${locator}    IN    @{locators}
+        ${is_visible}=    Run Keyword And Return Status
+        ...    Wait For Elements State    ${locator}    visible    timeout=2s
+        IF    ${is_visible}
+            RETURN    ${locator}
+        END
+    END
+    Fail    None of the candidate locators became visible: ${locators}

@@ -9,7 +9,7 @@ Access BHUB
     Access Application And Validate Health    ${BHUB_URL}    bhubhml.globalhitss.com.br
 
 Validate BHUB Initial Page
-    Validate Application Initial Page    ${BHUB_BODY}
+    Validate Application Initial Page    ${BHUB_PAGE_ROOT}
 
 Validate BHUB Availability
     [Documentation]    Validates the complete BHUB smoke-test business behavior using reusable keywords.

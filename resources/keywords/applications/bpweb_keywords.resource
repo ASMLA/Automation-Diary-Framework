@@ -9,7 +9,7 @@ Access BP WEB
     Access Application And Validate Health    ${BPWEB_URL}    bpwebhml.globalhitss.com.br
 
 Validate BP WEB Initial Page
-    Validate Application Initial Page    ${BPWEB_BODY}
+    Validate Application Initial Page    ${BPWEB_PAGE_ROOT}
 
 Validate BP WEB Availability
     [Documentation]    Validates the complete BP WEB smoke-test business behavior using reusable keywords.
