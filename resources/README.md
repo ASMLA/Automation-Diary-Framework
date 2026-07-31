@@ -1,12 +1,12 @@
 # HOT • BP WEB • BHUB Automation Framework
 
-**Project Status:** Sprint 1 Complete — Framework Foundation Ready
+**Project Status:** Documented, Executable Framework Foundation
 
 ## About this project
 
 This repository documents the evolution of a real-world web test automation framework built with Robot Framework and Browser Library (Playwright).
 
-The framework currently provides independent Smoke Tests for HOT, BP WEB, and BHUB, reusable business keywords, shared technical browser behavior, separated page resources, external configuration, an explicit locator strategy, and practical technical documentation.
+The framework currently provides independent Smoke Tests for HOT, BP WEB, and BHUB, reusable business keywords, shared technical browser behavior, separated page resources, external configuration, explicit locator strategy, and practical technical documentation.
 
 ## Current executable scope
 
@@ -18,33 +18,7 @@ The active Smoke Tests:
 - Confirm that the initial page root rendered
 - Generate HTML/XML reports and browser evidence
 
-Authentication and complete business flows remain planned work. Corporate VPN or network access may be required.
-
-## Current project status
-
-**Current version:** `v0.7.0`
-
-### Completed during Sprint 1
-
-- ✅ Planning and automation strategy
-- ✅ Framework foundation
-- ✅ Independent Smoke Tests
-- ✅ Reusable technical and business keywords
-- ✅ Clean project structure
-- ✅ Explicit locator strategy
-- ✅ Architecture, onboarding, execution, extension, and troubleshooting documentation
-- ✅ First sprint retrospective and roadmap
-
-### Planned for the next phase
-
-- 🚧 Authentication flows
-- 🚧 Complete HOT business flows
-- 🚧 BP WEB business flows
-- 🚧 BHUB validation flows
-- 🚧 End-to-End integration
-- 🚧 CI/CD
-- 🚧 API automation
-- 🚧 Parallel execution
+Authentication and full business flows remain planned work. Corporate VPN or network access may be required.
 
 ## Start here
 
@@ -55,8 +29,6 @@ Authentication and complete business flows remain planned work. Corporate VPN or
 | [Execution Guide](docs/getting-started/execution.md) | Run all tests or one application and read results |
 | [How to Add a Test](docs/guides/adding-tests.md) | Extend the framework without breaking responsibilities |
 | [Common Errors](docs/troubleshooting/common-errors.md) | Diagnose Node.js, Browser Library, VPN, and locator failures |
-| [Project Retrospective](docs/project/project-retrospective.md) | Review Sprint 1 decisions, results, and improvement opportunities |
-| [Roadmap](docs/roadmap.md) | Follow the next planned milestones |
 
 ## Quick start — Windows
 
@@ -85,7 +57,6 @@ robot -d results -i smoke tests
 │   ├── automation-diary
 │   ├── getting-started
 │   ├── guides
-│   ├── project
 │   └── troubleshooting
 ├── resources
 │   ├── keywords
@@ -114,8 +85,8 @@ robot -d results -i smoke tests
 | ✅ #003 – Building Reusable Keywords Instead of Duplicated Code | Completed |
 | ✅ #004 – The Importance of a Clean Project Structure | Completed |
 | ✅ #005 – Choosing the Right Locator Strategy | Completed |
-| ✅ #006 – Why Documentation Is Part of Automation | Completed |
-| 🔄 #007 – Lessons Learned After the First Sprint | Current |
+| 🔄 #006 – Why Documentation Is Part of Automation | Current |
+| ⏳ #007 – Lessons Learned After the First Sprint | Planned |
 
 ## Episode documentation
 
@@ -125,7 +96,6 @@ robot -d results -i smoke tests
 - [#004 – The Importance of a Clean Project Structure](docs/automation-diary/004-clean-project-structure.md)
 - [#005 – Choosing the Right Locator Strategy](docs/automation-diary/005-locator-strategy.md)
 - [#006 – Why Documentation Is Part of Automation](docs/automation-diary/006-documentation-is-part-of-automation.md)
-- [#007 – Lessons Learned After the First Sprint](docs/automation-diary/007-lessons-learned.md)
 
 ## Version history
 
@@ -137,13 +107,6 @@ robot -d results -i smoke tests
 | v0.4.0 | #004 | Clean project structure |
 | v0.5.0 | #005 | Stable locator strategy |
 | v0.6.0 | #006 | Architecture, onboarding, execution, extension, and troubleshooting documentation |
-| v0.7.0 | #007 | First sprint retrospective, lessons learned, and next-phase roadmap |
-
-## Sprint 1 summary
-
-Sprint 1 intentionally prioritized maintainability over test volume.
-
-The framework now has a documented foundation that another engineer can install, execute, understand, troubleshoot, and extend. The next phase will use this foundation to implement real business functionality.
 
 ## Philosophy
 
@@ -153,3 +116,37 @@ The framework now has a documented foundation that another engineer can install,
 
 **André Leite**  
 Senior QA Automation Engineer
+
+
+## Automation Diary
+
+| Diary | Status |
+|---|---|
+| #001 – Planning Before Coding | ✅ |
+| #002 – Smoke Tests | ✅ |
+| #003 – Reusable Keywords | ✅ |
+| #004 – Clean Project Structure | ✅ |
+| #005 – Locator Strategy | ✅ |
+| #006 – Documentation | ✅ |
+| #007 – Lessons Learned After the First Sprint | ✅ Current |
+
+## Current Version
+
+**v0.7.0**
+
+## Current Project Status
+
+Completed:
+- Planning
+- Smoke Tests
+- Reusable Keywords
+- Clean Project Structure
+- Locator Strategy
+- Documentation
+
+Next:
+- Authentication
+- Business Flows
+- CI/CD
+- API Automation
+- Parallel Execution

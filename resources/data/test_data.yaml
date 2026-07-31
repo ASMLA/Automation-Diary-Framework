@@ -1,0 +1,8 @@
+hot:
+  demand_title: "Automated demand example"
+
+bpweb:
+  simulation_name: "Automated simulation example"
+
+bhub:
+  validation_name: "Automated validation example"
