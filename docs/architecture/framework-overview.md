@@ -10,7 +10,8 @@ The current executable scope is environment availability validation through Smok
 
 ```text
 Test suite
-  -> application business keyword
+  -> shared suite lifecycle
+    -> application business keyword
     -> shared browser keyword
       -> page locator and environment variables
         -> Browser Library / Playwright
@@ -31,10 +32,11 @@ HOT Should Be Available
 | Area | Responsibility |
 |---|---|
 | `tests/` | Executable scenarios and suite-level setup/teardown |
+| `resources/suites/` | Shared suite setup and teardown contracts |
 | `resources/keywords/applications/` | Application-specific and business-readable behavior |
 | `resources/keywords/common/` | Shared technical browser behavior |
 | `resources/pages/` | Locators and page-level element contracts |
-| `resources/variables/` | URLs, browser, timeouts, and environment configuration |
+| `resources/variables/` | URLs, URL fragments, browser settings, timeouts, and validation catalogs |
 | `data/` | External test data |
 | `scripts/` | Supported execution helpers |
 | `docs/` | Architecture, onboarding, execution, contribution guidance, and engineering history |
@@ -49,6 +51,8 @@ HOT Should Be Available
 - Shared behavior is implemented once.
 - Locators follow an explicit stability hierarchy.
 - Documentation changes together with code.
+- Dependency versions are explicit and approved by the project.
+- Suite lifecycle behavior is centralized and defensive.
 
 ## Current scope
 

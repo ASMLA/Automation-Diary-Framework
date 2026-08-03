@@ -6,7 +6,7 @@ Resource    ../../pages/bhub_page.resource
 
 *** Keywords ***
 Access BHUB
-    Access Application And Validate Health    ${BHUB_URL}    bhubhml.globalhitss.com.br
+    Access Application And Validate Health    ${BHUB_URL}    ${BHUB_URL_FRAGMENT}
 
 Validate BHUB Initial Page
     Validate Application Initial Page    ${BHUB_PAGE_ROOT}

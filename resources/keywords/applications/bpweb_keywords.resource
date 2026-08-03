@@ -6,7 +6,7 @@ Resource    ../../pages/bpweb_page.resource
 
 *** Keywords ***
 Access BP WEB
-    Access Application And Validate Health    ${BPWEB_URL}    bpwebhml.globalhitss.com.br
+    Access Application And Validate Health    ${BPWEB_URL}    ${BPWEB_URL_FRAGMENT}
 
 Validate BP WEB Initial Page
     Validate Application Initial Page    ${BPWEB_PAGE_ROOT}

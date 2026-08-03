@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.0] - 2026-08-03
+
+### Added
+
+- Shared `resources/suites/smoke_suite.resource` lifecycle contract.
+- Central `resources/variables/validation.resource` technical-error catalog.
+- URL-fragment variables for HOT, BP WEB, and BHUB.
+- Defensive evidence and browser cleanup behavior.
+- Linux and macOS setup and Smoke Test runner scripts.
+- Maintainability guidelines and change-impact map.
+- Automation Diary #008 documentation.
+
+### Changed
+
+- Smoke and template suites now depend on shared lifecycle keywords instead of low-level browser setup directly.
+- Application access keywords now consume centralized URL-fragment variables.
+- Technical error validation now iterates over one centrally maintained catalog.
+- Python dependencies are pinned to project-approved versions.
+- Windows setup validates Python and Node.js before installation and initializes Chromium explicitly.
+- README and architecture documentation updated for v0.8.0.
+
+### Preserved
+
+- Existing Smoke Test business behavior.
+- Application-level business keywords.
+- Locator strategy and page-resource ownership.
+- Sprint 1 documentation and version history.
+
 ## [0.7.0] - 2026-07-31
 
 ### Added

@@ -2,7 +2,7 @@
 
 ## Current status
 
-Sprint 1 is complete at version `v0.7.0`.
+Sprint 1 is complete, and Phase 2 started at version `v0.8.0`.
 
 The first seven milestones established the project foundation. Starting with #008, the series follows the real evolution of the framework.
 
@@ -10,7 +10,7 @@ The first seven milestones established the project foundation. Starting with #00
 
 | Episode | Topic | Focus |
 |---|---|---|
-| #008 | Designing Automation for Maintainability | Maintainability principles applied to the next real change |
+| #008 | Designing Automation for Maintainability | ✅ Current — centralized lifecycle, configuration, validation, and dependency control |
 | #009 | Page Objects vs Business Keywords | Responsibility boundaries between locators, technical actions, and business intent |
 | #010 | Managing Test Data Efficiently | External data, environment differences, and reusable test inputs |
 | #011 | Avoiding Flaky Tests | Synchronization, isolation, locator contracts, and failure diagnosis |
