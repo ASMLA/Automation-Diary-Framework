@@ -6,7 +6,7 @@ Resource    ../../pages/hot_page.resource
 
 *** Keywords ***
 Access HOT
-    Access Application And Validate Health    ${HOT_URL}    hotcorphml.globalhitss.com.br
+    Access Application And Validate Health    ${HOT_URL}    ${HOT_URL_FRAGMENT}
 
 Validate HOT Initial Page
     Validate Application Initial Page    ${HOT_PAGE_ROOT}
