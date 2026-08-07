@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../keywords/common/browser_keywords.resource
+Resource    ../keywords/technical/browser_keywords.resource
 
 *** Keywords ***
 Prepare Smoke Test

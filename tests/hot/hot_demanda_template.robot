@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Initial template for the HOT demand-creation flow.
 Resource         ../../resources/suites/smoke_suite.resource
-Resource         ../../resources/keywords/applications/hot_keywords.resource
+Resource         ../../resources/keywords/business/applications/hot_business.resource
 Test Setup       Prepare Smoke Test
 Test Teardown    Finish Smoke Test
 Test Tags        hot    business-flow

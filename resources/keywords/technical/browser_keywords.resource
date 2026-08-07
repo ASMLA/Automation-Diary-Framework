@@ -1,0 +1,27 @@
+*** Settings ***
+Library     Browser
+Resource    ../../variables/environment.resource
+Resource    ../../variables/validation.resource
+
+*** Keywords ***
+Open Browser Session
+    [Documentation]    Opens an isolated browser context using the central execution configuration.
+    New Browser    ${BROWSER}    headless=${HEADLESS}
+    New Context    viewport={'width': 1440, 'height': 900}
+    Set Browser Timeout    ${TIMEOUT}
+
+Close Browser Session
+    [Documentation]    Captures evidence when possible and closes the browser without masking the original test result.
+    Run Keyword And Ignore Error    Take Screenshot
+    Run Keyword And Ignore Error    Close Browser
+
+Validate Page Has No Known Technical Errors
+    [Documentation]    Checks the rendered page against the centrally maintained technical-error catalog.
+    ${body_text}=    Get Text    body
+    FOR    ${error_message}    IN    @{KNOWN_TECHNICAL_ERRORS}
+        Should Not Contain    ${body_text}    ${error_message}
+    END
+
+Validate Page Has No Known Technical Error
+    [Documentation]    Backward-compatible alias maintained for earlier framework consumers.
+    Validate Page Has No Known Technical Errors

@@ -1,41 +1,42 @@
 # Automation Diary Roadmap
 
-## Current status
+## Current strategy
 
-Sprint 1 is complete, and Phase 2 started at version `v0.8.0`.
+The first Automation Diary saga builds the generic automation framework through episode #024. The goal is to reach a complete platform with defined patterns for Web, API, Smoke, Functional, Integration, E2E, data, reporting, CI/CD, parallel execution, containers, documentation, and metrics.
 
-The first seven milestones established the project foundation. Starting with #008, the series follows the real evolution of the framework.
+Real application onboarding begins only after the generic framework reaches its v1.0 milestone.
 
-## Confirmed next topics
+## Confirmed sequence
 
-| Episode | Topic | Focus |
+| Episode | Topic | Status / focus |
 |---|---|---|
-| #008 | Designing Automation for Maintainability | ✅ Current — centralized lifecycle, configuration, validation, and dependency control |
-| #009 | Page Objects vs Business Keywords | Responsibility boundaries between locators, technical actions, and business intent |
-| #010 | Managing Test Data Efficiently | External data, environment differences, and reusable test inputs |
-| #011 | Avoiding Flaky Tests | Synchronization, isolation, locator contracts, and failure diagnosis |
+| #008 | Designing Automation for Maintainability | ✅ Completed |
+| #009 | Page Objects vs Business Keywords | 🔄 Current — responsibility boundaries and generic layer contracts |
+| #010 | Managing Test Data Efficiently | Next — generic test-data architecture |
+| #011 | Avoiding Flaky Tests | Synchronization, isolation, retries, and failure diagnosis |
 | #012 | Integrating Robot Framework with CI/CD | Automated execution and feedback pipelines |
-| #013 | Scaling an Automation Framework | Growth without losing consistency or readability |
-| #014 | Logging That Actually Helps Debugging | Evidence, diagnostics, and actionable failures |
-| #015 | API and UI Automation Working Together | Combined coverage across service and browser layers |
-| #016 | Writing Tests That Other Engineers Can Understand | Readability, conventions, and reviewability |
-| #017 | How I Organize End-to-End Scenarios | Cross-system flows and responsibility boundaries |
-| #018 | Measuring Automation Success Beyond Test Coverage | Reliability, feedback time, maintenance cost, and defect detection |
+| #013 | Scaling an Automation Framework | Growth without losing consistency |
+| #014 | Logging That Actually Helps Debugging | Diagnostics and actionable failures |
+| #015 | API and UI Automation Working Together | Generic service/browser integration architecture |
+| #016 | Writing Tests That Other Engineers Can Understand | Readability and conventions |
+| #017 | How I Organize End-to-End Scenarios | E2E contracts and orchestration |
+| #018 | Measuring Automation Success Beyond Test Coverage | Reliability, feedback time, maintenance cost, metrics |
 
-## Functional priorities
+Episodes #019 through #024 will complete the remaining production-readiness capabilities required for the generic framework v1.0, including the final integration of execution, environment/secrets strategy, parallelization/containerization, quality gates, and stable release readiness. Their exact titles will be finalized as the preceding architecture is implemented.
 
-The exact implementation order after #007 will follow real project needs. Likely priorities include:
+## Saga 1 outcome
 
-- Authentication
-- HOT business flows
-- BP WEB business flows
-- BHUB validations
-- End-to-End integration
-- Environment and test-data management
-- CI/CD
-- API automation
-- Parallel execution
+At the end of #024, the framework should be ready for a real application to be onboarded by adding:
 
-## Roadmap rule
+- real environment configuration;
+- real Page Objects and locators;
+- real Business Keywords;
+- real test data;
+- real API clients and schemas when applicable;
+- real Smoke, Functional, Integration, and E2E scenarios.
 
-From #008 onward, topics must be justified by a real project change. The LinkedIn publication explains the engineering decision, while the GitHub repository demonstrates the implementation.
+The framework architecture itself should not need to be redesigned for that onboarding.
+
+## Saga 2
+
+The second saga will apply the completed framework to real enterprise systems. That is when authenticated screens, real buttons, fields, texts, APIs, business rules, and cross-system workflows will be mapped and automated.

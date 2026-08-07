@@ -2,27 +2,50 @@
 
 ## Goal
 
-Add tests without placing locators, technical browser operations, and business intent in the same file.
+Add tests without mixing scenario intent, business rules, page implementation, and technical browser behavior.
 
-## Decision sequence
-
-Before creating code, answer:
-
-1. Which application owns the behavior?
-2. Is the behavior shared or application-specific?
-3. Does the locator already exist?
-4. Is the test data fixed, environment-specific, or scenario-specific?
-5. Which tags should identify the suite?
-
-## 1. Add or confirm page locators
-
-Place application locators in:
+## Required flow
 
 ```text
-resources/pages/<application>_page.resource
+Test
+  -> Business Keyword
+    -> Page Object
+      -> Browser Library / technical utility
 ```
 
-Use the documented priority:
+## 1. Decide the scenario
+
+The test file owns the scenario name, tags, expected result, and scenario-level assertions. It must not contain selectors or direct Browser Library commands.
+
+## 2. Add or reuse a Business Keyword
+
+Business behavior belongs under:
+
+```text
+resources/keywords/business/
+```
+
+Use `applications/` for an onboarded application and `templates/` only as architectural examples.
+
+Business Keywords must describe intent and orchestrate Page Object operations. Do not add CSS, XPath, `Click`, `Fill Text`, or low-level waits here.
+
+## 3. Add or reuse a Page Object
+
+UI contracts belong under:
+
+```text
+resources/pages/
+```
+
+Page Objects own:
+
+- locators;
+- field interactions;
+- buttons and links;
+- page-level waits;
+- element reads.
+
+Locator priority remains:
 
 1. Stable automation attribute
 2. Accessible role and name
@@ -31,77 +54,52 @@ Use the documented priority:
 5. Explicit CSS
 6. XPath only as a documented last resort
 
-Do not invent `data-testid` values that are not present in the application.
+Do not invent `data-testid` values that do not exist in the real application.
 
-## 2. Add application behavior
+## 4. Use technical utilities only for cross-cutting behavior
 
-Place readable business or application behavior in:
-
-```text
-resources/keywords/applications/<application>_keywords.resource
-```
-
-Example:
-
-```robot
-Validate Demand Form Is Ready
-    Wait For Elements State    ${HOT_DEMAND_TITLE_PRIMARY}    visible
-```
-
-## 3. Reuse shared technical behavior
-
-Generic browser behavior belongs in:
+Shared technical behavior belongs under:
 
 ```text
-resources/keywords/common/browser_keywords.resource
+resources/keywords/technical/
 ```
 
-Only add a shared keyword when multiple applications genuinely share the same responsibility.
+Examples include browser-session lifecycle and technical-error validation. Do not move business rules into this layer.
 
-## 4. Add test data
+## 5. Add test data
 
-Reusable external data belongs in `data/`. Do not store credentials in the repository. Secrets should later be supplied through environment variables or a secure CI/CD secret store.
+Reusable external data belongs in `data/`. Credentials must never be committed. The dedicated test-data management architecture will be introduced in Automation Diary #010.
 
-## 5. Create the test
-
-Place the suite under the correct application folder:
-
-```text
-tests/hot/
-tests/bpweb/
-tests/bhub/
-tests/e2e/
-```
+## 6. Create the test
 
 Keep the test focused on intent:
 
 ```robot
 *** Test Cases ***
-Demand Form Should Be Ready
-    [Tags]    regression    hot
-    Validate Demand Form Is Ready
+Example Business Behavior Should Succeed
+    Execute Example Business Action
 ```
 
-## 6. Execute the smallest scope
+The framework templates demonstrate the structure without representing a real system.
 
-Run the application suite first, then the broader regression or Smoke Test set.
+## 7. Execute the smallest scope
 
-## 7. Update documentation
+Run the focused suite first, then the broader Smoke or regression scope.
 
-When behavior, architecture, setup, or execution changes, update at least one of:
+## 8. Update documentation
 
-- `README.md`
-- `CHANGELOG.md`
-- Architecture or getting-started guides
-- The current Automation Diary episode
+When architecture, behavior, setup, or execution changes, update the relevant README, CHANGELOG, architecture guide, and Automation Diary document.
 
 ## Review checklist
 
-- Test name explains the expected behavior
-- Appropriate tags are present
-- No locator is declared inside the test
-- No duplicated technical sequence was introduced
-- Locator choice follows the strategy
+- Test describes behavior, not UI implementation
+- Test contains no locator
+- Test contains no direct Browser Library command
+- Business Keyword contains no locator
+- Business Keyword contains no direct `Click` or `Fill Text`
+- Page Object owns the UI interaction
+- Technical utilities remain cross-cutting only
+- Locator follows the project strategy
 - No credentials or secrets were committed
-- Focused test execution completed
-- Documentation and changelog updated
+- Focused execution was completed
+- Documentation and changelog were updated
