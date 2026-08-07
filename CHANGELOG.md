@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] - 2026-08-07
+
+### Added
+
+- Explicit `resources/keywords/business/` layer for business intent and workflow orchestration.
+- Explicit `resources/keywords/technical/` layer for cross-cutting browser behavior.
+- Explicit `resources/pages/common/` and `resources/pages/applications/` Page Object structure.
+- Generic Page Object and Business Keyword templates for future real-application onboarding.
+- Shared business-level application-availability orchestration.
+- Architecture guide defining Page Object vs Business Keyword responsibilities.
+- Automation Diary #009 documentation.
+
+### Changed
+
+- Active Smoke and template suites now import the Business Keyword layer directly.
+- Existing HOT and BP WEB UI interactions were delegated from business resources to Page Objects.
+- Shared application page operations were centralized in `base_page.resource`.
+- Suite lifecycle now imports the technical browser layer explicitly.
+- Framework overview, contribution guide, roadmap, and README updated for the v0.9 architecture.
+
+### Compatibility
+
+- Previous application-keyword, common-keyword, and top-level page-resource paths remain as compatibility resources.
+- Existing Smoke Test behavior is preserved.
+- No new real application screens, fields, buttons, or business rules were invented in this milestone.
+
 ## [0.8.0] - 2026-08-03
 
 ### Added

@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Validates that BHUB is available and displays its initial page without known technical errors.
 Resource         ../../resources/suites/smoke_suite.resource
-Resource         ../../resources/keywords/applications/bhub_keywords.resource
+Resource         ../../resources/keywords/business/applications/bhub_business.resource
 Test Setup       Prepare Smoke Test
 Test Teardown    Finish Smoke Test
 Force Tags       smoke    bhub    critical

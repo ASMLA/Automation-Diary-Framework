@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Validates that BP WEB is available and displays its initial page without known technical errors.
 Resource         ../../resources/suites/smoke_suite.resource
-Resource         ../../resources/keywords/applications/bpweb_keywords.resource
+Resource         ../../resources/keywords/business/applications/bpweb_business.resource
 Test Setup       Prepare Smoke Test
 Test Teardown    Finish Smoke Test
 Force Tags       smoke    bpweb    critical

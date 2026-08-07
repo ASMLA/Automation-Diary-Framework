@@ -2,73 +2,74 @@
 
 ## Purpose
 
-This repository is a maintainable web test automation framework for HOT, BP WEB, and BHUB. It uses Robot Framework with Browser Library, which runs browser automation through Playwright.
+This repository is evolving into a generic, maintainable automation framework built with Robot Framework and Browser Library (Playwright). The first saga focuses on engineering the framework itself. Real application onboarding will happen after the framework reaches its v1.0 milestone.
 
-The current executable scope is environment availability validation through Smoke Tests. Business and end-to-end suites remain templates until their authenticated workflows and stable application contracts are confirmed.
+The current executable examples still validate HOT, BP WEB, and BHUB availability because they were used to prove the foundation, but version `v0.9.0` formalizes a generic architecture that is not coupled to those applications.
 
-## Execution flow
+## Architecture
 
 ```text
 Test suite
   -> shared suite lifecycle
-    -> application business keyword
-    -> shared browser keyword
-      -> page locator and environment variables
-        -> Browser Library / Playwright
-          -> HTML report, execution log, XML output, and screenshots
-```
-
-Example:
-
-```text
-HOT Should Be Available
-  -> Validate HOT Availability
-    -> Access Application And Validate Health
-    -> Validate Application Initial Page
+  -> Business Keyword
+    -> Page Object
+      -> Browser Library / technical utility
+        -> Playwright
+          -> browser
+            -> HTML report, log, XML output, screenshots
 ```
 
 ## Architectural responsibilities
 
 | Area | Responsibility |
 |---|---|
-| `tests/` | Executable scenarios and suite-level setup/teardown |
+| `tests/` | Scenarios, tags, expected behavior, scenario-level assertions |
+| `resources/keywords/business/` | Business intent and reusable workflow orchestration |
+| `resources/pages/` | Locators, UI operations, page-level waits, element reads |
+| `resources/keywords/technical/` | Cross-cutting browser and technical behavior |
 | `resources/suites/` | Shared suite setup and teardown contracts |
-| `resources/keywords/applications/` | Application-specific and business-readable behavior |
-| `resources/keywords/common/` | Shared technical browser behavior |
-| `resources/pages/` | Locators and page-level element contracts |
-| `resources/variables/` | URLs, URL fragments, browser settings, timeouts, and validation catalogs |
+| `resources/variables/` | Environment and execution configuration |
 | `data/` | External test data |
-| `scripts/` | Supported execution helpers |
-| `docs/` | Architecture, onboarding, execution, contribution guidance, and engineering history |
-| `results/` | Generated reports and evidence; not source code |
+| `scripts/` | Supported setup and execution helpers |
+| `docs/` | Architecture, onboarding, execution, engineering history |
+| `results/` | Generated evidence and reports |
+
+## Business Keywords vs Page Objects
+
+Business Keywords answer: **what is the user or business process trying to do?**
+
+Page Objects answer: **how does the UI perform that interaction?**
+
+A Business Keyword must not contain selectors or direct Browser Library commands. A Page Object may contain Browser Library commands, but it must not decide business rules.
+
+## Compatibility
+
+Paths used before v0.9.0 remain as compatibility resources. New development must use the explicit `business`, `technical`, and `pages` layers.
+
+## Generic framework strategy
+
+Until the end of the first saga, new screens, URLs, buttons, texts, and application-specific locators will not be invented. The framework will provide templates and contracts. Real application mapping starts only after the generic framework is complete.
+
+## Current executable scope
+
+The existing Smoke Tests still:
+
+1. Open HOT, BP WEB, or BHUB.
+2. Validate the expected environment URL.
+3. Detect known technical errors.
+4. Confirm that the initial page root is visible.
+5. Capture evidence.
+6. Close the browser defensively.
 
 ## Design principles
 
 - Tests communicate business intent.
-- Technical details are hidden behind reusable keywords.
-- Page resources own locators.
-- Environment resources own configuration.
+- Business Keywords do not know selectors.
+- Page Objects own UI implementation.
+- Technical utilities own cross-cutting browser behavior.
+- Configuration has one authoritative location.
 - Shared behavior is implemented once.
 - Locators follow an explicit stability hierarchy.
-- Documentation changes together with code.
-- Dependency versions are explicit and approved by the project.
-- Suite lifecycle behavior is centralized and defensive.
-
-## Current scope
-
-The Smoke Tests currently:
-
-1. Open HOT, BP WEB, or BHUB.
-2. Validate the expected environment URL.
-3. Detect known technical error messages.
-4. Confirm that the initial page root is visible.
-5. Capture execution evidence.
-6. Close the browser.
-
-## Current limitations
-
-- Authentication is not automated yet.
-- Business-flow templates are not active tests.
-- Corporate network or VPN access may be required.
-- A generic page root proves page rendering, not complete business readiness.
-- Stable application-specific locators must be confirmed against the authenticated DOM.
+- Dependency versions are controlled.
+- Documentation evolves with code.
+- Real application details are introduced only when the framework is ready to onboard them.

@@ -1,17 +1,3 @@
 *** Settings ***
-Library     Browser
-Resource    ../common/browser_keywords.resource
-Resource    ../../variables/environment.resource
-Resource    ../../pages/bhub_page.resource
-
-*** Keywords ***
-Access BHUB
-    Access Application And Validate Health    ${BHUB_URL}    ${BHUB_URL_FRAGMENT}
-
-Validate BHUB Initial Page
-    Validate Application Initial Page    ${BHUB_PAGE_ROOT}
-
-Validate BHUB Availability
-    [Documentation]    Validates the complete BHUB smoke-test business behavior using reusable keywords.
-    Access BHUB
-    Validate BHUB Initial Page
+Documentation    Compatibility resource for versions prior to v0.9.0. New code should import the business layer.
+Resource         ../business/applications/bhub_business.resource

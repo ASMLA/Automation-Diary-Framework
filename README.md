@@ -1,71 +1,115 @@
-# HOT • BP WEB • BHUB Automation Framework
+# Automation Diary Framework
 
-**Project Status:** Phase 2 Started — Maintainability Baseline Established
+**Project Status:** Phase 2 — Layered Architecture Established
 
 ## About this project
 
-This repository documents the evolution of a real-world web test automation framework built with Robot Framework and Browser Library (Playwright).
+This repository documents the evolution of a generic, production-oriented test automation framework built with:
 
-The framework currently provides independent Smoke Tests for HOT, BP WEB, and BHUB, reusable business keywords, shared technical behavior, centralized suite lifecycle management, separated page resources, external configuration, an explicit locator strategy, controlled dependencies, and practical technical documentation.
+- Robot Framework
+- Browser Library (Playwright)
+- Page Object architecture
+- Business Keywords
+- Shared technical utilities
+- External configuration and test data
+- Cross-platform setup and execution
+- Versioned documentation
+- CI/CD and API capabilities planned through the first saga
+
+The first Automation Diary saga focuses on building the framework itself. Real application onboarding will begin only after the generic framework reaches its v1.0 milestone.
+
+The existing HOT, BP WEB, and BHUB Smoke Tests remain as executable examples that prove the framework foundation, but new application-specific screens, buttons, fields, and business rules will not be invented during this saga.
+
+## Current version
+
+`v0.9.0`
 
 ## Current executable scope
 
-The active Smoke Tests:
+The active Smoke Tests currently:
 
-- Open each homologation environment
-- Validate the expected URL
-- Detect known technical error messages
-- Confirm that the initial page root rendered
-- Generate HTML/XML reports and browser evidence
-- Perform defensive cleanup without masking the original test result
+- open each configured homologation environment;
+- validate the expected URL;
+- detect known technical error messages;
+- confirm that the initial page root rendered;
+- generate HTML/XML reports and browser evidence;
+- perform defensive cleanup without masking the original test result.
 
-Authentication and complete business flows remain planned work. Corporate VPN or network access may be required.
+Authentication and complete business flows remain future application-onboarding work. Corporate VPN or network access may be required for the current executable examples.
+
+## Architecture — v0.9.0
+
+Version `v0.9.0` formalizes the framework contract:
+
+```text
+Tests
+  -> Business Keywords
+    -> Page Objects
+      -> Technical Utilities / Browser Library
+        -> Playwright
+          -> Browser
+```
+
+### Tests
+
+Own scenarios, tags, expected behavior, and scenario-level assertions.
+
+Tests must not contain locators or direct Browser Library commands.
+
+### Business Keywords
+
+Own business intent and workflow orchestration.
+
+Business Keywords must not contain CSS, XPath, or direct `Click` / `Fill Text` calls.
+
+### Page Objects
+
+Own locators and UI-level operations.
+
+A UI change should normally be resolved inside this layer without changing the business flow.
+
+### Technical Utilities
+
+Own cross-cutting browser concerns such as session lifecycle, defensive cleanup, and technical-error validation.
 
 ## Current project status
-
-**Current version:** `v0.8.0`
 
 ### Foundation completed
 
 - ✅ Planning and automation strategy
 - ✅ Independent Smoke Tests
-- ✅ Reusable technical and business keywords
+- ✅ Reusable keywords and DRY refactoring
 - ✅ Clean project structure
 - ✅ Explicit locator strategy
 - ✅ Architecture, onboarding, execution, extension, and troubleshooting documentation
 - ✅ First sprint retrospective and roadmap
-
-### Maintainability baseline completed in v0.8.0
-
-- ✅ Central application environment metadata
-- ✅ Central technical-error catalog
-- ✅ Shared Smoke Test lifecycle resource
-- ✅ Defensive evidence and cleanup behavior
-- ✅ Project-approved dependency versions
-- ✅ Windows, Linux, and macOS setup/run script parity
-- ✅ Maintainability guidelines and change-impact map
+- ✅ Maintainability baseline and controlled dependencies
+- ✅ Explicit Page Object vs Business Keyword architecture
 
 ### Planned next
 
-- 🚧 Page Objects vs Business Keywords
-- 🚧 Test-data management
+- 🚧 Generic test-data management architecture
 - 🚧 Flaky-test prevention improvements
-- 🚧 Authentication and business flows
-- 🚧 End-to-End integration
-- 🚧 CI/CD
+- 🚧 CI/CD integration
+- 🚧 Scaling and parallel execution
+- 🚧 Logging and reporting improvements
+- 🚧 API + UI architecture
+- 🚧 End-to-End orchestration
+- 🚧 Quality metrics and production-readiness capabilities through #024
 
 ## Start here
 
 | Guide | Purpose |
 |---|---|
 | [Framework Overview](docs/architecture/framework-overview.md) | Architecture, responsibilities, and execution flow |
+| [Page Objects vs Business Keywords](docs/architecture/page-objects-vs-business-keywords.md) | v0.9 layer contracts and change ownership |
 | [Maintainability Guidelines](docs/architecture/maintainability-guidelines.md) | Change ownership, dependency policy, and review checklist |
 | [Onboarding Guide](docs/getting-started/onboarding.md) | Prepare Windows, Linux, or macOS |
 | [Execution Guide](docs/getting-started/execution.md) | Run all tests or one application and read results |
-| [How to Add a Test](docs/guides/adding-tests.md) | Extend the framework without breaking responsibilities |
+| [How to Add a Test](docs/guides/adding-tests.md) | Extend the framework without mixing responsibilities |
 | [Common Errors](docs/troubleshooting/common-errors.md) | Diagnose Node.js, Browser Library, VPN, and locator failures |
 | [Project Retrospective](docs/project/project-retrospective.md) | Review Sprint 1 decisions, results, and improvement opportunities |
-| [Roadmap](docs/roadmap.md) | Follow the next planned milestones |
+| [Roadmap](docs/roadmap.md) | Follow the first saga through #024 and the future real-application saga |
 
 ## Quick start — Windows
 
@@ -90,7 +134,7 @@ robotframework-browser==20.2.0
 PyYAML==6.0.3
 ```
 
-The setup scripts install the versions approved by this project. Dependency upgrades are intentional framework changes and must be tested, documented, and versioned.
+The setup scripts install project-approved versions. Dependency upgrades are intentional framework changes and must be tested, documented, and versioned.
 
 ## Project structure
 
@@ -106,9 +150,17 @@ The setup scripts install the versions approved by this project. Dependency upgr
 │   └── troubleshooting
 ├── resources
 │   ├── keywords
-│   │   ├── applications
-│   │   └── common
+│   │   ├── applications        # compatibility paths from earlier versions
+│   │   ├── business
+│   │   │   ├── applications   # current executable example adapters
+│   │   │   ├── common
+│   │   │   └── templates      # generic onboarding contract
+│   │   ├── common              # compatibility path
+│   │   └── technical
 │   ├── pages
+│   │   ├── applications        # current executable example page objects
+│   │   ├── common
+│   │   └── templates           # generic page-object contract
 │   ├── suites
 │   └── variables
 ├── results
@@ -123,6 +175,20 @@ The setup scripts install the versions approved by this project. Dependency upgr
 └── requirements.txt
 ```
 
+## Compatibility policy
+
+Version `v0.9.0` introduces explicit layered paths without breaking the paths used by previous episodes.
+
+Earlier files under:
+
+```text
+resources/keywords/applications/
+resources/keywords/common/
+resources/pages/<application>_page.resource
+```
+
+remain as compatibility resources. New code must use the `business`, `technical`, and explicit Page Object paths.
+
 ## Automation Diary
 
 | Episode | Status |
@@ -134,8 +200,9 @@ The setup scripts install the versions approved by this project. Dependency upgr
 | ✅ #005 – Choosing the Right Locator Strategy | Completed |
 | ✅ #006 – Why Documentation Is Part of Automation | Completed |
 | ✅ #007 – Lessons Learned After the First Sprint | Completed |
-| 🔄 #008 – Designing Automation for Maintainability | Current |
-| ⏳ #009 – Page Objects vs Business Keywords | Next |
+| ✅ #008 – Designing Automation for Maintainability | Completed |
+| 🔄 #009 – Page Objects vs Business Keywords | Current |
+| ⏳ #010 – Managing Test Data Efficiently | Next |
 
 ## Episode documentation
 
@@ -147,6 +214,7 @@ The setup scripts install the versions approved by this project. Dependency upgr
 - [#006 – Why Documentation Is Part of Automation](docs/automation-diary/006-documentation-is-part-of-automation.md)
 - [#007 – Lessons Learned After the First Sprint](docs/automation-diary/007-lessons-learned.md)
 - [#008 – Designing Automation for Maintainability](docs/automation-diary/008-designing-automation-for-maintainability.md)
+- [#009 – Page Objects vs Business Keywords](docs/automation-diary/009-page-objects-vs-business-keywords.md)
 
 ## Version history
 
@@ -160,10 +228,26 @@ The setup scripts install the versions approved by this project. Dependency upgr
 | v0.6.0 | #006 | Technical documentation and onboarding |
 | v0.7.0 | #007 | First sprint retrospective and roadmap |
 | v0.8.0 | #008 | Maintainability baseline and controlled change points |
+| v0.9.0 | #009 | Page Object and Business Keyword responsibility boundaries |
+
+## First-saga goal
+
+The first saga continues through Automation Diary #024.
+
+At that point, the framework should be a complete generic automation platform ready to receive real systems by adding application-specific:
+
+- environment configuration;
+- Page Objects and locators;
+- Business Keywords;
+- test data;
+- API clients and schemas;
+- Smoke, Functional, Integration, and End-to-End scenarios.
+
+The second saga will focus on applying the finished framework to real enterprise applications.
 
 ## Philosophy
 
-> Maintainability means that every type of change has one clear home, one understandable impact, and one reliable validation path.
+> A maintainable test tells us what the business expects. A Page Object tells us how the interface works. The two responsibilities should not be the same thing.
 
 ## Author
 
