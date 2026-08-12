@@ -1,0 +1,6 @@
+environment:
+  name: sample
+  data_policy:
+    allow_generated_data: true
+    cleanup_required: true
+    production_data_allowed: false

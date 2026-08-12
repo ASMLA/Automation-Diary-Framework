@@ -11,9 +11,9 @@ Real application onboarding begins only after the generic framework reaches its 
 | Episode | Topic | Status / focus |
 |---|---|---|
 | #008 | Designing Automation for Maintainability | ✅ Completed |
-| #009 | Page Objects vs Business Keywords | 🔄 Current — responsibility boundaries and generic layer contracts |
-| #010 | Managing Test Data Efficiently | Next — generic test-data architecture |
-| #011 | Avoiding Flaky Tests | Synchronization, isolation, retries, and failure diagnosis |
+| #009 | Page Objects vs Business Keywords | ✅ Completed |
+| #010 | Managing Test Data Efficiently | 🔄 Current — generic builders, generators, validators, cleanup contracts, and framework tests |
+| #011 | Avoiding Flaky Tests | Next — Synchronization, isolation, retries, and failure diagnosis |
 | #012 | Integrating Robot Framework with CI/CD | Automated execution and feedback pipelines |
 | #013 | Scaling an Automation Framework | Growth without losing consistency |
 | #014 | Logging That Actually Helps Debugging | Diagnostics and actionable failures |

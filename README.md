@@ -1,6 +1,6 @@
 # Automation Diary Framework
 
-**Project Status:** Phase 2 — Layered Architecture Established
+**Project Status:** Phase 2 — Generic Test Data Management Established
 
 ## About this project
 
@@ -22,7 +22,7 @@ The existing HOT, BP WEB, and BHUB Smoke Tests remain as executable examples tha
 
 ## Current version
 
-`v0.9.0`
+`v0.10.0`
 
 ## Current executable scope
 
@@ -72,6 +72,45 @@ A UI change should normally be resolved inside this layer without changing the b
 
 Own cross-cutting browser concerns such as session lifecycle, defensive cleanup, and technical-error validation.
 
+
+## Test Data Management — v0.10.0
+
+Version `v0.10.0` adds an application-agnostic Test Data Management capability. The framework now separates test data into two concerns:
+
+- `data/` owns declarative YAML templates, static reference values, and environment data policies;
+- `resources/data/` owns executable generation, building, validation, and cleanup orchestration.
+
+The generic flow is:
+
+```text
+Data Template / Defaults
+  -> Generator
+    -> Builder
+      -> Validator
+        -> Business Test
+          -> Cleanup Registry
+```
+
+The framework intentionally does not create HOT, BP WEB, or BHUB records yet. Real application creation and deletion adapters belong to the second saga, after the generic framework is complete.
+
+### Framework-level validation
+
+The new Test Data Management capability can be validated independently from any browser or application:
+
+```bat
+scripts\run_framework_tests.bat
+```
+
+```powershell
+.\scripts\run_framework_tests.ps1
+```
+
+```bash
+scripts/run_framework_tests.sh
+```
+
+These tests validate traceable generated identifiers, safe non-production emails, controlled overrides, required-field validation, and cleanup registration.
+
 ## Current project status
 
 ### Foundation completed
@@ -85,10 +124,11 @@ Own cross-cutting browser concerns such as session lifecycle, defensive cleanup,
 - ✅ First sprint retrospective and roadmap
 - ✅ Maintainability baseline and controlled dependencies
 - ✅ Explicit Page Object vs Business Keyword architecture
+- ✅ Generic Test Data Management architecture with builders, generators, validators, and cleanup registry
 
 ### Planned next
 
-- 🚧 Generic test-data management architecture
+- ✅ Generic test-data management architecture
 - 🚧 Flaky-test prevention improvements
 - 🚧 CI/CD integration
 - 🚧 Scaling and parallel execution
@@ -104,6 +144,7 @@ Own cross-cutting browser concerns such as session lifecycle, defensive cleanup,
 | [Framework Overview](docs/architecture/framework-overview.md) | Architecture, responsibilities, and execution flow |
 | [Page Objects vs Business Keywords](docs/architecture/page-objects-vs-business-keywords.md) | v0.9 layer contracts and change ownership |
 | [Maintainability Guidelines](docs/architecture/maintainability-guidelines.md) | Change ownership, dependency policy, and review checklist |
+| [Test Data Management](docs/architecture/test-data-management.md) | Builders, generators, validators, templates, and cleanup contracts |
 | [Onboarding Guide](docs/getting-started/onboarding.md) | Prepare Windows, Linux, or macOS |
 | [Execution Guide](docs/getting-started/execution.md) | Run all tests or one application and read results |
 | [How to Add a Test](docs/guides/adding-tests.md) | Extend the framework without mixing responsibilities |
@@ -141,6 +182,9 @@ The setup scripts install project-approved versions. Dependency upgrades are int
 ```text
 .
 ├── data
+│   ├── environments
+│   ├── static
+│   └── templates
 ├── docs
 │   ├── architecture
 │   ├── automation-diary
@@ -149,6 +193,11 @@ The setup scripts install project-approved versions. Dependency upgrades are int
 │   ├── project
 │   └── troubleshooting
 ├── resources
+│   ├── data
+│   │   ├── builders
+│   │   ├── cleanup
+│   │   ├── generators
+│   │   └── validators
 │   ├── keywords
 │   │   ├── applications        # compatibility paths from earlier versions
 │   │   ├── business
@@ -169,7 +218,8 @@ The setup scripts install project-approved versions. Dependency upgrades are int
 │   ├── bhub
 │   ├── bpweb
 │   ├── e2e
-│   └── hot
+│   ├── hot
+│   └── framework          # application-independent capability tests
 ├── CHANGELOG.md
 ├── README.md
 └── requirements.txt
@@ -201,8 +251,9 @@ remain as compatibility resources. New code must use the `business`, `technical`
 | ✅ #006 – Why Documentation Is Part of Automation | Completed |
 | ✅ #007 – Lessons Learned After the First Sprint | Completed |
 | ✅ #008 – Designing Automation for Maintainability | Completed |
-| 🔄 #009 – Page Objects vs Business Keywords | Current |
-| ⏳ #010 – Managing Test Data Efficiently | Next |
+| ✅ #009 – Page Objects vs Business Keywords | Completed |
+| 🔄 #010 – Managing Test Data Efficiently | Current |
+| ⏳ #011 – Avoiding Flaky Tests | Next |
 
 ## Episode documentation
 
@@ -215,6 +266,7 @@ remain as compatibility resources. New code must use the `business`, `technical`
 - [#007 – Lessons Learned After the First Sprint](docs/automation-diary/007-lessons-learned.md)
 - [#008 – Designing Automation for Maintainability](docs/automation-diary/008-designing-automation-for-maintainability.md)
 - [#009 – Page Objects vs Business Keywords](docs/automation-diary/009-page-objects-vs-business-keywords.md)
+- [#010 – Managing Test Data Efficiently](docs/automation-diary/010-managing-test-data-efficiently.md)
 
 ## Version history
 
@@ -229,6 +281,7 @@ remain as compatibility resources. New code must use the `business`, `technical`
 | v0.7.0 | #007 | First sprint retrospective and roadmap |
 | v0.8.0 | #008 | Maintainability baseline and controlled change points |
 | v0.9.0 | #009 | Page Object and Business Keyword responsibility boundaries |
+| v0.10.0 | #010 | Generic Test Data Management capability |
 
 ## First-saga goal
 
@@ -247,7 +300,7 @@ The second saga will focus on applying the finished framework to real enterprise
 
 ## Philosophy
 
-> A maintainable test tells us what the business expects. A Page Object tells us how the interface works. The two responsibilities should not be the same thing.
+> Reliable automation requires reliable test data. Data creation, validation, traceability, and cleanup should be engineered as framework capabilities rather than repeated inside test cases.
 
 ## Author
 

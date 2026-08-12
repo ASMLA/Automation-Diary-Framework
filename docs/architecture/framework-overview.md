@@ -73,3 +73,11 @@ The existing Smoke Tests still:
 - Dependency versions are controlled.
 - Documentation evolves with code.
 - Real application details are introduced only when the framework is ready to onboard them.
+
+## Test Data Management layer — v0.10.0
+
+The framework now provides application-independent test-data services under `resources/data/` and declarative YAML under `data/`.
+
+Business tests should consume prepared data objects rather than generating random values inline. Builders compose data, generators create traceable runtime values, validators fail fast on invalid preconditions, and the cleanup registry tracks disposable records for future application-specific deletion adapters.
+
+This layer is intentionally generic during Saga 1.

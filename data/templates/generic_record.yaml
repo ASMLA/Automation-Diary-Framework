@@ -1,0 +1,6 @@
+record:
+  status: READY
+  source: AUTOMATION
+  metadata:
+    purpose: generic-test-data-template
+    owner: automation-framework

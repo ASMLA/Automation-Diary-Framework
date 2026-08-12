@@ -1,0 +1,8 @@
+profiles:
+  - admin
+  - analyst
+  - manager
+statuses:
+  - READY
+  - PROCESSING
+  - COMPLETED
