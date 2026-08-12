@@ -1,6 +1,6 @@
 # Automation Diary Framework
 
-**Project Status:** Phase 2 — Generic Test Data Management Established
+**Project Status:** Phase 2 — Anti-Flakiness Strategy Established
 
 ## About this project
 
@@ -22,7 +22,7 @@ The existing HOT, BP WEB, and BHUB Smoke Tests remain as executable examples tha
 
 ## Current version
 
-`v0.10.0`
+`v0.11.0`
 
 ## Current executable scope
 
@@ -111,6 +111,12 @@ scripts/run_framework_tests.sh
 
 These tests validate traceable generated identifiers, safe non-production emails, controlled overrides, required-field validation, and cleanup registration.
 
+## Anti-Flakiness Strategy — v0.11.0
+
+Version `v0.11.0` adds a central synchronization policy. The framework prefers Playwright/Browser Library auto-waiting and observable state-based waits over fixed sleeps. Retry behavior is deliberately restricted to idempotent, read-only checks where eventual consistency is expected. State-changing operations must not be blindly retried.
+
+Timing policy lives in `resources/variables/resilience.resource`, while reusable synchronization behavior lives in `resources/keywords/technical/synchronization.resource`. Framework-level tests verify that this policy remains explicit and free from fixed `Sleep` calls.
+
 ## Current project status
 
 ### Foundation completed
@@ -129,7 +135,7 @@ These tests validate traceable generated identifiers, safe non-production emails
 ### Planned next
 
 - ✅ Generic test-data management architecture
-- 🚧 Flaky-test prevention improvements
+- ✅ Flaky-test prevention strategy and centralized synchronization
 - 🚧 CI/CD integration
 - 🚧 Scaling and parallel execution
 - 🚧 Logging and reporting improvements
@@ -145,6 +151,7 @@ These tests validate traceable generated identifiers, safe non-production emails
 | [Page Objects vs Business Keywords](docs/architecture/page-objects-vs-business-keywords.md) | v0.9 layer contracts and change ownership |
 | [Maintainability Guidelines](docs/architecture/maintainability-guidelines.md) | Change ownership, dependency policy, and review checklist |
 | [Test Data Management](docs/architecture/test-data-management.md) | Builders, generators, validators, templates, and cleanup contracts |
+| [Anti-Flakiness Strategy](docs/architecture/anti-flakiness-strategy.md) | Synchronization, timeout, and safe retry policy |
 | [Onboarding Guide](docs/getting-started/onboarding.md) | Prepare Windows, Linux, or macOS |
 | [Execution Guide](docs/getting-started/execution.md) | Run all tests or one application and read results |
 | [How to Add a Test](docs/guides/adding-tests.md) | Extend the framework without mixing responsibilities |

@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.11.0] - 2026-08-12
+
+### Added
+
+- Central anti-flakiness timing policy in `resources/variables/resilience.resource`.
+- Reusable state-based synchronization keywords.
+- Explicit read-only retry contract for expected eventual-consistency checks.
+- Framework-level anti-flakiness policy tests.
+- Anti-Flakiness Strategy architecture guide.
+- Automation Diary #011 documentation.
+
+### Changed
+
+- Common Page Object operations now consume centralized synchronization keywords.
+- Browser session timeout now uses the central resilience policy.
+- Hard-coded common page wait values replaced by named timeout policies.
+- README and roadmap advanced to v0.11.0.
+
+### Preserved
+
+- Existing Smoke Test behavior.
+- Test Data Management capability from v0.10.0.
+- Page Object vs Business Keyword boundaries.
+- No real application-specific waits or retry rules were invented.
+
 ## [0.10.0] - 2026-08-07
 
 ### Added

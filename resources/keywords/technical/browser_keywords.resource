@@ -2,13 +2,14 @@
 Library     Browser
 Resource    ../../variables/environment.resource
 Resource    ../../variables/validation.resource
+Resource    ../../variables/resilience.resource
 
 *** Keywords ***
 Open Browser Session
     [Documentation]    Opens an isolated browser context using the central execution configuration.
     New Browser    ${BROWSER}    headless=${HEADLESS}
     New Context    viewport={'width': 1440, 'height': 900}
-    Set Browser Timeout    ${TIMEOUT}
+    Set Browser Timeout    ${DEFAULT_UI_TIMEOUT}
 
 Close Browser Session
     [Documentation]    Captures evidence when possible and closes the browser without masking the original test result.
