@@ -98,3 +98,28 @@ A successful full execution should report three passing availability tests. A fa
 - Known technical error detected
 
 See [Common Errors](../troubleshooting/common-errors.md).
+
+
+## Run framework capability tests
+
+Framework-level tests validate application-independent capabilities without opening a browser.
+
+Windows:
+
+```bat
+scripts\run_framework_tests.bat
+```
+
+PowerShell:
+
+```powershell
+.\scripts\run_framework_tests.ps1
+```
+
+Linux/macOS:
+
+```bash
+scripts/run_framework_tests.sh
+```
+
+The v0.10.0 suite currently validates the generic Test Data Management layer.

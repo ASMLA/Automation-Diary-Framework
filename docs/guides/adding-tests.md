@@ -103,3 +103,16 @@ When architecture, behavior, setup, or execution changes, update the relevant RE
 - No credentials or secrets were committed
 - Focused execution was completed
 - Documentation and changelog were updated
+
+
+## Test data ownership — v0.10.0
+
+Do not generate random values directly inside business tests. Use the framework Test Data Management layer:
+
+- `resources/data/generators/` for runtime unique values;
+- `resources/data/builders/` for complete data objects;
+- `resources/data/validators/` for precondition validation;
+- `resources/data/cleanup/` for disposable-data tracking;
+- `data/` for declarative templates, references, and environment policies.
+
+Application-specific creation/deletion adapters must be added only when a real system is onboarded.

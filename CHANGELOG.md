@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.10.0] - 2026-08-07
+
+### Added
+
+- Generic Test Data Management architecture under `resources/data/`.
+- Runtime generators for UUID-based tokens, safe test emails, timestamps, and traceable `AUTO_` identifiers.
+- Generic data builder with explicit field overrides.
+- Required-field, traceability, and non-production email validators.
+- In-memory cleanup registry for future application-specific deletion adapters.
+- Declarative YAML areas for templates, static reference data, and environment data policies.
+- Framework-level automated tests for the Test Data Management capability.
+- Cross-platform scripts for running application-independent framework tests.
+- Test Data Management architecture guide.
+- Automation Diary #010 documentation.
+
+### Changed
+
+- README updated to version `v0.10.0` with the generic data flow and framework-test commands.
+- Framework overview updated with Test Data Management responsibilities.
+- Roadmap advanced to Automation Diary #010.
+
+### Preserved
+
+- Existing Smoke Test behavior.
+- Page Object vs Business Keyword boundaries introduced in v0.9.0.
+- No real HOT, BP WEB, or BHUB test-data creation or deletion was introduced.
+
 ## [0.9.0] - 2026-08-07
 
 ### Added
