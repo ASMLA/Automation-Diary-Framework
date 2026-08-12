@@ -81,3 +81,8 @@ The framework now provides application-independent test-data services under `res
 Business tests should consume prepared data objects rather than generating random values inline. Builders compose data, generators create traceable runtime values, validators fail fast on invalid preconditions, and the cleanup registry tracks disposable records for future application-specific deletion adapters.
 
 This layer is intentionally generic during Saga 1.
+
+
+## Resilience and synchronization — v0.11.0
+
+The framework centralizes timing policy in `resources/variables/resilience.resource` and reusable state-based waits in `resources/keywords/technical/synchronization.resource`. Fixed sleeps are prohibited in the shared synchronization layer. Retries are limited to idempotent/read-only checks and must never blindly repeat state-changing business actions. See [Anti-Flakiness Strategy](anti-flakiness-strategy.md).

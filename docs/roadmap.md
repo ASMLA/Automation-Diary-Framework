@@ -40,3 +40,8 @@ The framework architecture itself should not need to be redesigned for that onbo
 ## Saga 2
 
 The second saga will apply the completed framework to real enterprise systems. That is when authenticated screens, real buttons, fields, texts, APIs, business rules, and cross-system workflows will be mapped and automated.
+
+
+## Current milestone — #011
+
+Automation Diary #011 — Avoiding Flaky Tests — completed in v0.11.0. Central synchronization, timeout policy, and safe read-only retry contracts are now part of the generic framework. Next: #012 — Integrating Robot Framework with CI/CD.
