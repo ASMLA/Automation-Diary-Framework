@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.12.0
+
+### Added
+- GitHub Actions CI workflow
+- Automated framework capability tests
+- Automated smoke tests
+- Python and Node.js CI setup
+- Robot Framework Browser initialization
+- Report artifacts
+- CI/CD architecture and Diary #012 documentation
+
+### Changed
+- Framework validation now supports shared CI execution
+- README and roadmap updated
+
+
 All notable changes to this project will be documented in this file.
 
 ## [0.11.0] - 2026-08-12

@@ -313,3 +313,9 @@ The second saga will focus on applying the finished framework to real enterprise
 
 **André Leite**  
 Senior QA Automation Engineer
+
+
+## Continuous Integration (v0.12.0)
+
+The framework now includes `.github/workflows/robot-framework-ci.yml`.
+It automatically runs framework capability tests and smoke tests in GitHub Actions, initializes Browser/Playwright, and publishes Robot Framework reports as artifacts. The workflow remains application-agnostic and is ready for future real-system onboarding.

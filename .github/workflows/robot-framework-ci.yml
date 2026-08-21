@@ -1,0 +1,53 @@
+name: Robot Framework CI
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  framework-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Run framework capability tests
+        run: robot --outputdir reports/framework tests/framework
+      - name: Upload framework reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: framework-test-reports
+          path: reports/framework
+          retention-days: 14
+  smoke-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install -r requirements.txt
+      - name: Initialize Robot Framework Browser
+        run: rfbrowser init
+      - name: Run smoke tests
+        run: robot --outputdir reports/smoke --include smoke tests
+      - name: Upload smoke reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-test-reports
+          path: reports/smoke
+          retention-days: 14
