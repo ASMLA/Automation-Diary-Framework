@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.13.0
+
+### Added
+- Scaling architecture and application-boundary strategy
+- Scalable suite and application onboarding templates
+- Tagging/selective-execution guidance
+- Test independence and framework-core protection rules
+- Automation Diary #013 documentation
+
+### Changed
+- README and roadmap updated for v0.13.0
+
+
 ## v0.12.0
 
 ### Added
