@@ -319,3 +319,8 @@ Senior QA Automation Engineer
 
 The framework now includes `.github/workflows/robot-framework-ci.yml`.
 It automatically runs framework capability tests and smoke tests in GitHub Actions, initializes Browser/Playwright, and publishes Robot Framework reports as artifacts. The workflow remains application-agnostic and is ready for future real-system onboarding.
+
+
+## Scaling Strategy (v0.13.0)
+
+The framework now defines explicit application boundaries, test-scope classification, tags, test independence, and a reusable onboarding contract. See `docs/architecture/scaling-strategy.md`.
