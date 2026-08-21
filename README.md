@@ -324,3 +324,18 @@ It automatically runs framework capability tests and smoke tests in GitHub Actio
 ## Scaling Strategy (v0.13.0)
 
 The framework now defines explicit application boundaries, test-scope classification, tags, test independence, and a reusable onboarding contract. See `docs/architecture/scaling-strategy.md`.
+
+
+## Structured Logging (v0.14.0)
+
+The framework now provides a shared diagnostic logging capability.
+
+Instead of adding arbitrary `Log` statements to test scenarios, reusable technical keywords provide structured INFO, DEBUG, WARN, and ERROR messages, test lifecycle logs, and diagnostic context.
+
+Example:
+
+`[AUTOMATION] | test=Example | Test started`
+
+Sensitive values must never be logged.
+
+See `docs/architecture/logging-strategy.md`.
