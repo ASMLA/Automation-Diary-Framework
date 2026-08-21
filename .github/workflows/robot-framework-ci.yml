@@ -43,6 +43,8 @@ jobs:
       - name: Initialize Robot Framework Browser
         run: rfbrowser init
       - name: Run smoke tests
+        env:
+          HEADLESS: "true"
         run: robot --outputdir reports/smoke --include smoke tests
       - name: Upload smoke reports
         if: always()
