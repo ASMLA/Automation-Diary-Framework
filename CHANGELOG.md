@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.14.0
+
+### Added
+
+- Shared structured logging strategy
+- Central logging configuration
+- Reusable INFO, DEBUG, WARN, and ERROR logging keywords
+- Test lifecycle logging helpers
+- Diagnostic-context logging
+- Framework-level logging tests
+- Logging architecture documentation
+- Automation Diary #014 documentation
+
+### Changed
+
+- README and roadmap updated for v0.14.0
+
+
 ## v0.13.0
 
 ### Added

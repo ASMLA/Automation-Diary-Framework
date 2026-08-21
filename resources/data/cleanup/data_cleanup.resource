@@ -17,4 +17,4 @@ Get Registered Test Data For Cleanup
 
 Clear Test Data Cleanup Registry
     [Documentation]    Clears the in-memory registry after cleanup has completed.
-    Clear List    ${TEST_DATA_CLEANUP_REGISTRY}
+    Evaluate    $TEST_DATA_CLEANUP_REGISTRY.clear()
