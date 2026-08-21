@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.15.0
+
+### Added
+
+- Generic API client layer
+- Shared API configuration
+- API + UI business-flow template
+- API + UI scenario template
+- Framework-level API/UI architecture test
+- API/UI architecture documentation
+- Automation Diary #015 documentation
+
+### Changed
+
+- README and roadmap updated for v0.15.0
+
+
 ## v0.14.0
 
 ### Added

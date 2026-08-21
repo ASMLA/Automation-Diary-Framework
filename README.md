@@ -339,3 +339,12 @@ Example:
 Sensitive values must never be logged.
 
 See `docs/architecture/logging-strategy.md`.
+
+
+## API + UI Integration (v0.15.0)
+
+The framework now includes an application-agnostic contract for combining API and UI automation.
+
+APIs can prepare state and validate backend results, while Page Objects remain responsible for genuine browser behavior. Business Keywords coordinate both layers without exposing HTTP or locator details to test scenarios.
+
+See `docs/architecture/api-ui-strategy.md`.

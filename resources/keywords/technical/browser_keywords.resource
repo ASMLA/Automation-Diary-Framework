@@ -1,4 +1,5 @@
 *** Settings ***
+Library           OperatingSystem
 Library     Browser
 Resource    ../../variables/environment.resource
 Resource    ../../variables/validation.resource
@@ -26,3 +27,10 @@ Validate Page Has No Known Technical Errors
 Validate Page Has No Known Technical Error
     [Documentation]    Backward-compatible alias maintained for earlier framework consumers.
     Validate Page Has No Known Technical Errors
+
+
+Resolve Headless Mode
+    [Documentation]    Resolves browser visibility from HEADLESS environment variable. Defaults to false for local execution.
+    ${headless_env}=    Get Environment Variable    HEADLESS    false
+    ${headless}=    Evaluate    str($headless_env).lower() in ('1','true','yes','on')
+    RETURN    ${headless}
