@@ -12,14 +12,14 @@ Real application onboarding begins only after the generic framework reaches its 
 |---|---|---|
 | #008 | Designing Automation for Maintainability | ✅ Completed |
 | #009 | Page Objects vs Business Keywords | ✅ Completed |
-| #010 | Managing Test Data Efficiently | 🔄 Current — generic builders, generators, validators, cleanup contracts, and framework tests |
-| #011 | Avoiding Flaky Tests | Next — Synchronization, isolation, retries, and failure diagnosis |
-| #012 | Integrating Robot Framework with CI/CD | Automated execution and feedback pipelines |
-| #013 | Scaling an Automation Framework | Growth without losing consistency |
-| #014 | Logging That Actually Helps Debugging | Diagnostics and actionable failures |
-| #015 | API and UI Automation Working Together | Generic service/browser integration architecture |
-| #016 | Writing Tests That Other Engineers Can Understand | Readability and conventions |
-| #017 | How I Organize End-to-End Scenarios | E2E contracts and orchestration |
+| #010 | Managing Test Data Efficiently | ✅ Completed |
+| #011 | Avoiding Flaky Tests | ✅ Completed |
+| #012 | Integrating Robot Framework with CI/CD | ✅ Completed |
+| #013 | Scaling an Automation Framework | ✅ Completed |
+| #014 | Logging That Actually Helps Debugging | ✅ Completed |
+| #015 | API and UI Automation Working Together | ✅ Completed |
+| #016 | Writing Tests That Other Engineers Can Understand | 🔄 Current — readability and conventions |
+| #017 | How I Organize End-to-End Scenarios | Next — E2E contracts and orchestration |
 | #018 | Measuring Automation Success Beyond Test Coverage | Reliability, feedback time, maintenance cost, metrics |
 
 Episodes #019 through #024 will complete the remaining production-readiness capabilities required for the generic framework v1.0, including the final integration of execution, environment/secrets strategy, parallelization/containerization, quality gates, and stable release readiness. Their exact titles will be finalized as the preceding architecture is implemented.
@@ -42,6 +42,6 @@ The framework architecture itself should not need to be redesigned for that onbo
 The second saga will apply the completed framework to real enterprise systems. That is when authenticated screens, real buttons, fields, texts, APIs, business rules, and cross-system workflows will be mapped and automated.
 
 
-## Current milestone — #011
+## Current milestone — #016
 
-Automation Diary #011 — Avoiding Flaky Tests — completed in v0.11.0. Central synchronization, timeout policy, and safe read-only retry contracts are now part of the generic framework. Next: #012 — Integrating Robot Framework with CI/CD.
+Automation Diary #016 — Writing Tests That Other Engineers Can Understand — implemented in v0.16.0. The framework now defines shared readability conventions, a readable scenario template, and framework-level convention checks. Next: #017 — How I Organize End-to-End Scenarios.
