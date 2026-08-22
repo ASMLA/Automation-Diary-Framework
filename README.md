@@ -259,21 +259,33 @@ remain as compatibility resources. New code must use the `business`, `technical`
 | ✅ #007 – Lessons Learned After the First Sprint | Completed |
 | ✅ #008 – Designing Automation for Maintainability | Completed |
 | ✅ #009 – Page Objects vs Business Keywords | Completed |
-| 🔄 #010 – Managing Test Data Efficiently | Current |
-| ⏳ #011 – Avoiding Flaky Tests | Next |
+| ✅ #010 – Managing Test Data Efficiently | Completed |
+| ✅ #011 – Avoiding Flaky Tests | Completed |
+| ✅ #012 – Integrating Robot Framework with CI/CD | Completed |
+| ✅ #013 – Scaling an Automation Framework | Completed |
+| ✅ #014 – Logging That Actually Helps Debugging | Completed |
+| ✅ #015 – API and UI Automation Working Together | Completed |
+| 🔄 #016 – Writing Tests That Other Engineers Can Understand | Current |
+| ⏳ #017 – How I Organize End-to-End Scenarios | Next |
 
 ## Episode documentation
 
-- [#001 – Planning Before Coding](docs/automation-diary/001-planning-before-coding.md)
-- [#002 – Why I Always Start with Smoke Tests](docs/automation-diary/002-smoke-tests.md)
-- [#003 – Building Reusable Keywords Instead of Duplicated Code](docs/automation-diary/003-reusable-keywords.md)
-- [#004 – The Importance of a Clean Project Structure](docs/automation-diary/004-clean-project-structure.md)
-- [#005 – Choosing the Right Locator Strategy](docs/automation-diary/005-locator-strategy.md)
-- [#006 – Why Documentation Is Part of Automation](docs/automation-diary/006-documentation-is-part-of-automation.md)
-- [#007 – Lessons Learned After the First Sprint](docs/automation-diary/007-lessons-learned.md)
-- [#008 – Designing Automation for Maintainability](docs/automation-diary/008-designing-automation-for-maintainability.md)
-- [#009 – Page Objects vs Business Keywords](docs/automation-diary/009-page-objects-vs-business-keywords.md)
-- [#010 – Managing Test Data Efficiently](docs/automation-diary/010-managing-test-data-efficiently.md)
+- [#001](docs/automation-diary/001-planning-before-coding.md)
+- [#002](docs/automation-diary/002-smoke-tests.md)
+- [#003](docs/automation-diary/003-reusable-keywords.md)
+- [#004 — The Importance of a Clean Project Structure](docs/automation-diary/004-clean-project-structure.md)
+- [#005 — Choosing the Right Locator Strategy](docs/automation-diary/005-locator-strategy.md)
+- [#006](docs/automation-diary/006-documentation-is-part-of-automation.md)
+- [#007](docs/automation-diary/007-lessons-learned.md)
+- [#008](docs/automation-diary/008-designing-automation-for-maintainability.md)
+- [#009](docs/automation-diary/009-page-objects-vs-business-keywords.md)
+- [#010 — Managing Test Data Efficiently](docs/automation-diary/010-managing-test-data-efficiently.md)
+- [#011 — Avoiding Flaky Tests](docs/automation-diary/011-avoiding-flaky-tests.md)
+- [#012 — Integrating Robot Framework with CI/CD](docs/automation-diary/012-integrating-robot-framework-with-ci-cd.md)
+- [#013 — Scaling an Automation Framework](docs/automation-diary/013-scaling-an-automation-framework.md)
+- [#014 — Logging That Actually Helps Debugging](docs/automation-diary/014-logging-that-actually-helps-debugging.md)
+- [#015 — API and UI Automation Working Together](docs/automation-diary/015-api-and-ui-automation-working-together.md)
+- [#016 — Writing Tests That Other Engineers Can Understand](docs/automation-diary/016-writing-tests-that-other-engineers-can-understand.md)
 
 ## Version history
 
@@ -289,6 +301,12 @@ remain as compatibility resources. New code must use the `business`, `technical`
 | v0.8.0 | #008 | Maintainability baseline and controlled change points |
 | v0.9.0 | #009 | Page Object and Business Keyword responsibility boundaries |
 | v0.10.0 | #010 | Generic Test Data Management capability |
+| v0.11.0 | #011 | Anti-flakiness and synchronization strategy |
+| v0.12.0 | #012 | CI/CD integration |
+| v0.13.0 | #013 | Framework scaling strategy |
+| v0.14.0 | #014 | Structured diagnostic logging |
+| v0.15.0 | #015 | API + UI integration architecture |
+| v0.16.0 | #016 | Readable tests and shared writing conventions |
 
 ## First-saga goal
 
@@ -348,3 +366,12 @@ The framework now includes an application-agnostic contract for combining API an
 APIs can prepare state and validate backend results, while Page Objects remain responsible for genuine browser behavior. Business Keywords coordinate both layers without exposing HTTP or locator details to test scenarios.
 
 See `docs/architecture/api-ui-strategy.md`.
+
+
+## Readable Tests and Conventions (v0.16.0)
+
+The framework now defines a shared readability contract for Robot Framework scenarios. Tests should communicate behavior and expected outcomes without exposing selectors, HTTP mechanics, fixed waits, or other low-level implementation details.
+
+A generic `Given / When / Then` template demonstrates how business intent remains in the scenario while reusable Business Keywords keep implementation below the test layer.
+
+See `docs/architecture/readability-and-test-conventions.md` and `docs/guides/test-writing-conventions.md`.

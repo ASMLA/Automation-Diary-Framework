@@ -8,7 +8,8 @@ Resource    ../../variables/resilience.resource
 *** Keywords ***
 Open Browser Session
     [Documentation]    Opens an isolated browser context using the central execution configuration.
-    New Browser    ${BROWSER}    headless=${HEADLESS}
+    ${headless}=    Resolve Headless Mode
+    New Browser    ${BROWSER}    headless=${headless}
     New Context    viewport={'width': 1440, 'height': 900}
     Set Browser Timeout    ${DEFAULT_UI_TIMEOUT}
 

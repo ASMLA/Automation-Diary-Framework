@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.16.0
+
+### Added
+
+- Shared readability and test-writing conventions
+- Behavior-oriented Robot Framework scenario template
+- Generic readable Business Keyword template
+- Framework-level readability convention checks
+- Readability architecture and practical writing guides
+- Automation Diary #016 documentation
+
+### Changed
+
+- README and roadmap updated for v0.16.0
+
 ## v0.15.0
 
 ### Added
