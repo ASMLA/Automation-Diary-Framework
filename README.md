@@ -1,6 +1,6 @@
 # Automation Diary Framework
 
-**Project Status:** Phase 2 — Anti-Flakiness Strategy Established
+**Project Status:** Framework Saga — End-to-End Orchestration Established
 
 ## About this project
 
@@ -22,7 +22,7 @@ The existing HOT, BP WEB, and BHUB Smoke Tests remain as executable examples tha
 
 ## Current version
 
-`v0.11.0`
+`v0.17.0`
 
 ## Current executable scope
 
@@ -265,8 +265,9 @@ remain as compatibility resources. New code must use the `business`, `technical`
 | ✅ #013 – Scaling an Automation Framework | Completed |
 | ✅ #014 – Logging That Actually Helps Debugging | Completed |
 | ✅ #015 – API and UI Automation Working Together | Completed |
-| 🔄 #016 – Writing Tests That Other Engineers Can Understand | Current |
-| ⏳ #017 – How I Organize End-to-End Scenarios | Next |
+| ✅ #016 – Writing Tests That Other Engineers Can Understand | Completed |
+| 🔄 #017 – How I Organize End-to-End Scenarios | Current |
+| ⏳ #018 – Measuring Automation Success Beyond Test Coverage | Next |
 
 ## Episode documentation
 
@@ -286,6 +287,7 @@ remain as compatibility resources. New code must use the `business`, `technical`
 - [#014 — Logging That Actually Helps Debugging](docs/automation-diary/014-logging-that-actually-helps-debugging.md)
 - [#015 — API and UI Automation Working Together](docs/automation-diary/015-api-and-ui-automation-working-together.md)
 - [#016 — Writing Tests That Other Engineers Can Understand](docs/automation-diary/016-writing-tests-that-other-engineers-can-understand.md)
+- [#017 — How I Organize End-to-End Scenarios](docs/automation-diary/017-how-i-organize-end-to-end-scenarios.md)
 
 ## Version history
 
@@ -307,6 +309,7 @@ remain as compatibility resources. New code must use the `business`, `technical`
 | v0.14.0 | #014 | Structured diagnostic logging |
 | v0.15.0 | #015 | API + UI integration architecture |
 | v0.16.0 | #016 | Readable tests and shared writing conventions |
+| v0.17.0 | #017 | End-to-End scenario orchestration contract |
 
 ## First-saga goal
 
@@ -375,3 +378,12 @@ The framework now defines a shared readability contract for Robot Framework scen
 A generic `Given / When / Then` template demonstrates how business intent remains in the scenario while reusable Business Keywords keep implementation below the test layer.
 
 See `docs/architecture/readability-and-test-conventions.md` and `docs/guides/test-writing-conventions.md`.
+
+
+## End-to-End Scenario Orchestration (v0.17.0)
+
+The framework now defines a reusable contract for organizing critical integrated journeys through explicit **Prepare → Act → Transition → Verify → Cleanup** phases.
+
+E2E scenarios orchestrate Business Keywords and reusable framework capabilities instead of duplicating Page Objects, raw API calls, selectors, waits, or technical retry logic. Cross-application transitions remain visible at the scenario level while each application retains ownership of its implementation.
+
+See `docs/architecture/end-to-end-scenario-strategy.md`.

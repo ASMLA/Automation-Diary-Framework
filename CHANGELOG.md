@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.17.0
+
+### Added
+
+- Generic End-to-End orchestration strategy
+- Prepare / Act / Transition / Verify / Cleanup scenario contract
+- Reusable E2E orchestration Business Keyword template
+- Application-agnostic E2E scenario template
+- Framework-level E2E architecture checks
+- Automation Diary #017 documentation
+
+### Changed
+
+- README and roadmap updated for v0.17.0
+
 ## v0.16.0
 
 ### Added
