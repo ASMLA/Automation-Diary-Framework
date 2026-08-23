@@ -18,9 +18,9 @@ Real application onboarding begins only after the generic framework reaches its 
 | #013 | Scaling an Automation Framework | ✅ Completed |
 | #014 | Logging That Actually Helps Debugging | ✅ Completed |
 | #015 | API and UI Automation Working Together | ✅ Completed |
-| #016 | Writing Tests That Other Engineers Can Understand | 🔄 Current — readability and conventions |
-| #017 | How I Organize End-to-End Scenarios | Next — E2E contracts and orchestration |
-| #018 | Measuring Automation Success Beyond Test Coverage | Reliability, feedback time, maintenance cost, metrics |
+| #016 | Writing Tests That Other Engineers Can Understand | ✅ Completed |
+| #017 | How I Organize End-to-End Scenarios | 🔄 Current — E2E contracts and orchestration |
+| #018 | Measuring Automation Success Beyond Test Coverage | Next — reliability, feedback time, maintenance cost, metrics |
 
 Episodes #019 through #024 will complete the remaining production-readiness capabilities required for the generic framework v1.0, including the final integration of execution, environment/secrets strategy, parallelization/containerization, quality gates, and stable release readiness. Their exact titles will be finalized as the preceding architecture is implemented.
 
@@ -42,6 +42,6 @@ The framework architecture itself should not need to be redesigned for that onbo
 The second saga will apply the completed framework to real enterprise systems. That is when authenticated screens, real buttons, fields, texts, APIs, business rules, and cross-system workflows will be mapped and automated.
 
 
-## Current milestone — #016
+## Current milestone — #017
 
-Automation Diary #016 — Writing Tests That Other Engineers Can Understand — implemented in v0.16.0. The framework now defines shared readability conventions, a readable scenario template, and framework-level convention checks. Next: #017 — How I Organize End-to-End Scenarios.
+Automation Diary #017 — How I Organize End-to-End Scenarios — implemented in v0.17.0. The framework now defines a reusable E2E orchestration contract with explicit Prepare, Act, Transition, Verify, and Cleanup phases. Next: #018 — Measuring Automation Success Beyond Test Coverage.
