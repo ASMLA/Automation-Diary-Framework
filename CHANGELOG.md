@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.18.0
+
+### Added
+
+- Automation metrics strategy
+- Generic metrics calculation helpers
+- Pass-rate calculation
+- Failure-rate calculation
+- Flaky-test-rate calculation
+- Automation stability calculation
+- Defect-detection-rate calculation
+- Execution-savings calculation
+- Framework-level metrics tests
+- Metrics usage template
+- Automation Diary #018 documentation
+
+### Changed
+
+- README and roadmap updated for v0.18.0
+
+
 ## v0.17.0
 
 ### Added
