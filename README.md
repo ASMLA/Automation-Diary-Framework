@@ -387,3 +387,12 @@ The framework now defines a reusable contract for organizing critical integrated
 E2E scenarios orchestrate Business Keywords and reusable framework capabilities instead of duplicating Page Objects, raw API calls, selectors, waits, or technical retry logic. Cross-application transitions remain visible at the scenario level while each application retains ownership of its implementation.
 
 See `docs/architecture/end-to-end-scenario-strategy.md`.
+
+
+## Automation Metrics (v0.18.0)
+
+The framework now includes a generic metrics capability for measuring automation effectiveness beyond raw test coverage.
+
+Supported indicators include pass rate, failure rate, flaky-test rate, automation stability, defect-detection contribution, and estimated execution savings.
+
+See `docs/architecture/automation-metrics-strategy.md`.
