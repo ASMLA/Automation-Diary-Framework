@@ -6,10 +6,13 @@ Resource         logging.resource
 *** Keywords ***
 Calculate Percentage
     [Arguments]    ${part}    ${total}    ${precision}=${METRIC_DEFAULT_PRECISION}
-    IF    ${total} == 0
+    ${part_number}=    Convert To Number    ${part}
+    ${total_number}=    Convert To Number    ${total}
+    ${precision_number}=    Convert To Integer    ${precision}
+    IF    ${total_number} == 0
         RETURN    ${METRIC_ZERO}
     END
-    ${percentage}=    Evaluate    round(($part / $total) * 100, int($precision))
+    ${percentage}=    Evaluate    round(($part_number / $total_number) * 100, $precision_number)
     RETURN    ${percentage}
 
 Calculate Pass Rate
