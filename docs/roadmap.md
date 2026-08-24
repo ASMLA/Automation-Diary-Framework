@@ -45,3 +45,5 @@ The second saga will apply the completed framework to real enterprise systems. T
 ## Current milestone — #017
 
 Automation Diary #017 — How I Organize End-to-End Scenarios — implemented in v0.17.0. The framework now defines a reusable E2E orchestration contract with explicit Prepare, Act, Transition, Verify, and Cleanup phases. Next: #018 — Measuring Automation Success Beyond Test Coverage.
+
+- #020 — Parallel Execution and Execution Strategy — ✅ v0.20.0
