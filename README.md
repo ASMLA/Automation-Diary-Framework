@@ -396,3 +396,14 @@ The framework now includes a generic metrics capability for measuring automation
 Supported indicators include pass rate, failure rate, flaky-test rate, automation stability, defect-detection contribution, and estimated execution savings.
 
 See `docs/architecture/automation-metrics-strategy.md`.
+
+
+## Environment & Configuration Management (v0.19.0)
+
+The framework now provides a central configuration layer for resolving environment-dependent values without hard-coding them inside test scenarios.
+
+Supported generic configuration includes environment name, browser, headless execution, API timeout, defaults, and required-value validation.
+
+Real secrets are intentionally excluded from repository configuration and will later be injected through secure runtime or CI mechanisms.
+
+See `docs/architecture/environment-and-configuration-management.md`.

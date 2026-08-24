@@ -1,0 +1,12 @@
+environment:
+  name: hml
+  browser: chromium
+  headless: false
+
+timeouts:
+  ui: 10
+  api: 30
+
+notes:
+  - This file is an example only.
+  - Real secrets must never be committed.

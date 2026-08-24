@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.19.0
+
+### Added
+
+- Central environment and configuration strategy
+- Shared configuration defaults
+- Environment-variable resolution helpers
+- Environment-name resolution
+- Browser and headless configuration resolution
+- API-timeout configuration
+- Required-configuration validation
+- Example environment configuration
+- Framework-level configuration tests
+- Configuration usage template
+- Automation Diary #019 documentation
+
+### Changed
+
+- README and roadmap updated for v0.19.0
+
+
 ## v0.18.0
 
 ### Added
