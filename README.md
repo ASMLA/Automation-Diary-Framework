@@ -1,6 +1,6 @@
 # Automation Diary Framework
 
-**Project Status:** Framework Saga — End-to-End Orchestration Established
+**Project Status:** Framework Saga — Parallel Execution Strategy Established
 
 ## About this project
 
@@ -22,7 +22,7 @@ The existing HOT, BP WEB, and BHUB Smoke Tests remain as executable examples tha
 
 ## Current version
 
-`v0.17.0`
+`v0.20.0`
 
 ## Current executable scope
 
@@ -130,18 +130,25 @@ Timing policy lives in `resources/variables/resilience.resource`, while reusable
 - ✅ First sprint retrospective and roadmap
 - ✅ Maintainability baseline and controlled dependencies
 - ✅ Explicit Page Object vs Business Keyword architecture
-- ✅ Generic Test Data Management architecture with builders, generators, validators, and cleanup registry
+- ✅ Generic Test Data Management
+- ✅ Anti-Flakiness and centralized synchronization
+- ✅ CI/CD integration
+- ✅ Framework scaling strategy
+- ✅ Structured diagnostic logging
+- ✅ API + UI integration architecture
+- ✅ Shared readability and test-writing conventions
+- ✅ End-to-End scenario orchestration
+- ✅ Automation effectiveness metrics
+- ✅ Environment and Configuration Management
+- 🔄 Parallel Execution and Execution Strategy — current milestone
 
 ### Planned next
 
-- ✅ Generic test-data management architecture
-- ✅ Flaky-test prevention strategy and centralized synchronization
-- 🚧 CI/CD integration
-- 🚧 Scaling and parallel execution
-- 🚧 Logging and reporting improvements
-- 🚧 API + UI architecture
-- 🚧 End-to-End orchestration
-- 🚧 Quality metrics and production-readiness capabilities through #024
+- ⏳ #021 — Secrets and Secure Test Configuration
+- ⏳ #022 — Reporting, Evidence, and Execution Observability
+- ⏳ #023 — Production-Readiness and Framework Governance
+- ⏳ #024 — Framework Finalization and v1.0 Readiness
+- ⏳ Real application onboarding after the generic framework is complete
 
 ## Start here
 
@@ -152,6 +159,15 @@ Timing policy lives in `resources/variables/resilience.resource`, while reusable
 | [Maintainability Guidelines](docs/architecture/maintainability-guidelines.md) | Change ownership, dependency policy, and review checklist |
 | [Test Data Management](docs/architecture/test-data-management.md) | Builders, generators, validators, templates, and cleanup contracts |
 | [Anti-Flakiness Strategy](docs/architecture/anti-flakiness-strategy.md) | Synchronization, timeout, and safe retry policy |
+| [CI/CD Strategy](docs/architecture/ci-cd-strategy.md) | Robot Framework execution and validation in CI |
+| [Scaling Strategy](docs/architecture/scaling-strategy.md) | Application boundaries, scopes, and scalable onboarding |
+| [Logging Strategy](docs/architecture/logging-strategy.md) | Structured diagnostic logging and evidence |
+| [API + UI Strategy](docs/architecture/api-ui-strategy.md) | API preparation and UI verification boundaries |
+| [Readability and Test Conventions](docs/architecture/readability-and-test-conventions.md) | Shared test-writing contract |
+| [End-to-End Scenario Strategy](docs/architecture/end-to-end-scenario-strategy.md) | Prepare, Act, Transition, Verify, Cleanup orchestration |
+| [Automation Metrics Strategy](docs/architecture/automation-metrics-strategy.md) | Effectiveness indicators beyond test volume |
+| [Environment & Configuration Management](docs/architecture/environment-and-configuration-management.md) | Runtime configuration and environment resolution |
+| [Parallel Execution Strategy](docs/architecture/parallel-execution-strategy.md) | Configurable concurrency and test independence |
 | [Onboarding Guide](docs/getting-started/onboarding.md) | Prepare Windows, Linux, or macOS |
 | [Execution Guide](docs/getting-started/execution.md) | Run all tests or one application and read results |
 | [How to Add a Test](docs/guides/adding-tests.md) | Extend the framework without mixing responsibilities |
@@ -180,6 +196,7 @@ scripts/run_smoke.sh all
 robotframework==7.4.2
 robotframework-browser==20.2.0
 PyYAML==6.0.3
+robotframework-pabot==5.2.2
 ```
 
 The setup scripts install project-approved versions. Dependency upgrades are intentional framework changes and must be tested, documented, and versioned.
@@ -266,8 +283,14 @@ remain as compatibility resources. New code must use the `business`, `technical`
 | ✅ #014 – Logging That Actually Helps Debugging | Completed |
 | ✅ #015 – API and UI Automation Working Together | Completed |
 | ✅ #016 – Writing Tests That Other Engineers Can Understand | Completed |
-| 🔄 #017 – How I Organize End-to-End Scenarios | Current |
-| ⏳ #018 – Measuring Automation Success Beyond Test Coverage | Next |
+| ✅ #017 – How I Organize End-to-End Scenarios | Completed |
+| ✅ #018 – Measuring Automation Success Beyond Test Coverage | Completed |
+| ✅ #019 – Environment and Configuration Management | Completed |
+| 🔄 #020 – Parallel Execution and Execution Strategy | Current |
+| ⏳ #021 – Secrets and Secure Test Configuration | Next |
+| ⏳ #022 – Reporting, Evidence, and Execution Observability | Planned |
+| ⏳ #023 – Production-Readiness and Framework Governance | Planned |
+| ⏳ #024 – Framework Finalization and v1.0 Readiness | Planned |
 
 ## Episode documentation
 
@@ -288,6 +311,9 @@ remain as compatibility resources. New code must use the `business`, `technical`
 - [#015 — API and UI Automation Working Together](docs/automation-diary/015-api-and-ui-automation-working-together.md)
 - [#016 — Writing Tests That Other Engineers Can Understand](docs/automation-diary/016-writing-tests-that-other-engineers-can-understand.md)
 - [#017 — How I Organize End-to-End Scenarios](docs/automation-diary/017-how-i-organize-end-to-end-scenarios.md)
+- [#018 — Measuring Automation Success Beyond Test Coverage](docs/automation-diary/018-measuring-automation-success-beyond-test-coverage.md)
+- [#019 — Environment and Configuration Management](docs/automation-diary/019-environment-and-configuration-management.md)
+- [#020 — Parallel Execution and Execution Strategy](docs/automation-diary/020-parallel-execution-and-execution-strategy.md)
 
 ## Version history
 
@@ -310,6 +336,9 @@ remain as compatibility resources. New code must use the `business`, `technical`
 | v0.15.0 | #015 | API + UI integration architecture |
 | v0.16.0 | #016 | Readable tests and shared writing conventions |
 | v0.17.0 | #017 | End-to-End scenario orchestration contract |
+| v0.18.0 | #018 | Automation effectiveness metrics beyond raw test coverage |
+| v0.19.0 | #019 | Environment and configuration management |
+| v0.20.0 | #020 | Parallel execution and execution strategy |
 
 ## First-saga goal
 
@@ -328,7 +357,7 @@ The second saga will focus on applying the finished framework to real enterprise
 
 ## Philosophy
 
-> Reliable automation requires reliable test data. Data creation, validation, traceability, and cleanup should be engineered as framework capabilities rather than repeated inside test cases.
+> Reliable automation comes from explicit architecture: reusable behavior, isolated test data, deterministic synchronization, observable execution, external configuration, secure runtime values, and independent scenarios.
 
 ## Author
 
@@ -407,3 +436,24 @@ Supported generic configuration includes environment name, browser, headless exe
 Real secrets are intentionally excluded from repository configuration and will later be injected through secure runtime or CI mechanisms.
 
 See `docs/architecture/environment-and-configuration-management.md`.
+
+
+## Parallel Execution (v0.20.0)
+
+The framework now includes a configurable parallel execution capability powered by Pabot.
+
+Parallelism is intentionally separated from test design. Tests must remain independent, own their setup and cleanup, and avoid shared mutable state before they are considered safe for concurrent execution.
+
+Cross-platform runners:
+
+- `scripts/run_parallel.bat`
+- `scripts/run_parallel.ps1`
+- `scripts/run_parallel.sh`
+
+Key runtime configuration:
+
+- `PARALLEL_PROCESSES`
+- `EXECUTION_SCOPE`
+- `PARALLEL_OUTPUT_DIR`
+
+See `docs/architecture/parallel-execution-strategy.md`.

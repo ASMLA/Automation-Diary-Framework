@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.20.0
+
+### Added
+
+- Parallel execution strategy
+- Pabot execution support
+- Central execution configuration
+- Parallel process-count resolution
+- Execution-scope resolution
+- Parallel output-directory resolution
+- Cross-platform parallel runner scripts
+- Parallel framework CI job
+- Framework-level execution-strategy tests
+- Parallel-safe scenario template
+- Automation Diary #020 documentation
+
+### Changed
+
+- README and roadmap updated for v0.20.0
+
+
 ## v0.19.0
 
 ### Added

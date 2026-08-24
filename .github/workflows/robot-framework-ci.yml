@@ -53,3 +53,37 @@ jobs:
           name: smoke-test-reports
           path: reports/smoke
           retention-days: 14
+
+  parallel-framework-tests:
+    name: Parallel framework capability tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run framework capability tests in parallel
+        env:
+          PARALLEL_PROCESSES: "2"
+          EXECUTION_SCOPE: "framework"
+        run: pabot --processes "$PARALLEL_PROCESSES" --outputdir reports/parallel-framework tests/framework
+
+      - name: Upload parallel framework reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: parallel-framework-test-reports
+          path: reports/parallel-framework
+          if-no-files-found: warn
+          retention-days: 14
+
