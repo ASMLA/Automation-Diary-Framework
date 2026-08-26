@@ -1,4 +1,4 @@
-# Automation Diary #008
+# Automation Diary #008 — Designing Automation for Maintainability
 
 ## Designing Automation for Maintainability
 
