@@ -1,4 +1,4 @@
-# Automation Diary #002
+# Automation Diary #002 — Why I Always Start with Smoke Tests
 
 ## Why I Always Start with Smoke Tests
 

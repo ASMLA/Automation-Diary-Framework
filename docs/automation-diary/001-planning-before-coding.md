@@ -1,4 +1,4 @@
-# Automation Diary #001
+# Automation Diary #001 — Planning Before Coding
 
 ## Planning Before Coding
 

@@ -140,7 +140,7 @@ Timing policy lives in `resources/variables/resilience.resource`, while reusable
 - ✅ End-to-End scenario orchestration
 - ✅ Automation effectiveness metrics
 - ✅ Environment and Configuration Management
-- 🔄 Parallel Execution and Execution Strategy — current milestone
+- ✅ Parallel Execution and Execution Strategy
 
 ### Planned next
 
@@ -286,7 +286,7 @@ remain as compatibility resources. New code must use the `business`, `technical`
 | ✅ #017 – How I Organize End-to-End Scenarios | Completed |
 | ✅ #018 – Measuring Automation Success Beyond Test Coverage | Completed |
 | ✅ #019 – Environment and Configuration Management | Completed |
-| 🔄 #020 – Parallel Execution and Execution Strategy | Current |
+| ✅ #020 – Parallel Execution and Execution Strategy | Completed |
 | ⏳ #021 – Secrets and Secure Test Configuration | Next |
 | ⏳ #022 – Reporting, Evidence, and Execution Observability | Planned |
 | ⏳ #023 – Production-Readiness and Framework Governance | Planned |
@@ -294,15 +294,15 @@ remain as compatibility resources. New code must use the `business`, `technical`
 
 ## Episode documentation
 
-- [#001](docs/automation-diary/001-planning-before-coding.md)
-- [#002](docs/automation-diary/002-smoke-tests.md)
-- [#003](docs/automation-diary/003-reusable-keywords.md)
+- [#001 — Planning Before Coding](docs/automation-diary/001-planning-before-coding.md)
+- [#002 — Why I Always Start with Smoke Tests](docs/automation-diary/002-smoke-tests.md)
+- [#003 — Building Reusable Keywords Instead of Duplicated Code](docs/automation-diary/003-reusable-keywords.md)
 - [#004 — The Importance of a Clean Project Structure](docs/automation-diary/004-clean-project-structure.md)
 - [#005 — Choosing the Right Locator Strategy](docs/automation-diary/005-locator-strategy.md)
-- [#006](docs/automation-diary/006-documentation-is-part-of-automation.md)
-- [#007](docs/automation-diary/007-lessons-learned.md)
-- [#008](docs/automation-diary/008-designing-automation-for-maintainability.md)
-- [#009](docs/automation-diary/009-page-objects-vs-business-keywords.md)
+- [#006 — Why Documentation Is Part of Automation](docs/automation-diary/006-documentation-is-part-of-automation.md)
+- [#007 — Lessons Learned After the First Sprint](docs/automation-diary/007-lessons-learned.md)
+- [#008 — Designing Automation for Maintainability](docs/automation-diary/008-designing-automation-for-maintainability.md)
+- [#009 — Page Objects vs Business Keywords](docs/automation-diary/009-page-objects-vs-business-keywords.md)
 - [#010 — Managing Test Data Efficiently](docs/automation-diary/010-managing-test-data-efficiently.md)
 - [#011 — Avoiding Flaky Tests](docs/automation-diary/011-avoiding-flaky-tests.md)
 - [#012 — Integrating Robot Framework with CI/CD](docs/automation-diary/012-integrating-robot-framework-with-ci-cd.md)

@@ -1,4 +1,4 @@
-# Automation Diary #003
+# Automation Diary #003 — Building Reusable Keywords Instead of Duplicated Code
 
 ## Building Reusable Keywords Instead of Duplicated Code
 
