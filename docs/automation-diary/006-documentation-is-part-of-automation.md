@@ -1,4 +1,4 @@
-# Automation Diary #006 — Why Documentation Is Part of Automation
+# Automation Diary #006
 
 ## Why Documentation Is Part of Automation
 
