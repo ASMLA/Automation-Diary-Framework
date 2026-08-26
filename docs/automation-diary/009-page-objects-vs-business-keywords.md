@@ -1,4 +1,4 @@
-# Automation Diary #009 — Page Objects vs Business Keywords
+# Automation Diary #009
 
 ## Page Objects vs Business Keywords
 

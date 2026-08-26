@@ -1,8 +1,8 @@
 # Automation Diary Framework
 
-**Project Status:** Framework Saga --- 20 of 24 milestones completed\
-**Current Version:** `v0.20.0`\
-**Next Milestone:** `#021 — Secrets and Secure Test Configuration`
+**Project Status:** Framework Saga — 21 of 24 milestones completed
+**Current Version:** `v0.21.0`\
+**Next Milestone:** `#022 — Reporting, Evidence, and Execution Observability`
 
 ## About This Project
 
@@ -304,9 +304,11 @@ is complete.
 
 ### Secure Runtime Values
 
-Real secrets are intentionally excluded from repository configuration.
-Secure secret injection and runtime handling are the focus of Automation
-Diary #021.
+Sensitive runtime values are resolved through the centralized secure configuration capability.
+
+Real passwords, tokens, API keys, private credentials, and session secrets are never committed to the repository. Local execution supplies them through environment variables, while CI environments can inject them through protected secret stores.
+
+See [Secrets and Secure Test Configuration](docs/architecture/secrets-and-secure-configuration.md).
 
 ## Project Structure
 

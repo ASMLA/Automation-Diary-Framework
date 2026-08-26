@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.21.0] - 2026-08-26
+
+### Added
+
+- Centralized secure runtime configuration capability.
+- Optional and required secret resolution through environment variables.
+- Fail-fast validation for missing required secrets.
+- Secret-name validation and safe masking capability.
+- Framework-level secure configuration tests.
+- Secure configuration usage template.
+- Secure configuration architecture documentation.
+- Automation Diary #021 documentation.
+
+### Security
+
+- Secrets remain outside version-controlled configuration.
+- Sensitive values are never written to framework logs.
+- CI/CD secret injection remains external to repository source code.
+- Example configuration documents secret names only and never real values.
+
+### Documentation
+
+- Updated README to v0.21.0 and 21/24 completed milestones.
+- Updated roadmap and next milestone references.
+- Added secure configuration to the framework capability index.
+
+
 ## v0.20.0
 
 ### Added

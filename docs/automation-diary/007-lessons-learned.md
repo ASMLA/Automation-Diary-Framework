@@ -1,4 +1,4 @@
-# Automation Diary #007 — Lessons Learned After the First Sprint
+# Automation Diary #007
 
 ## Lessons Learned After the First Sprint
 
