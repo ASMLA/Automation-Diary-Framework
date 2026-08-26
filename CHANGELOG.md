@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.22.0] - 2026-08-26
+
+### Added
+
+- Central reporting and execution-observability capability.
+- Evidence-root and report-root resolution.
+- Traceable execution metadata.
+- Deterministic evidence naming.
+- Framework-level observability tests.
+- Observability usage template.
+- Reporting, evidence, and observability architecture documentation.
+- Automation Diary #022 documentation.
+
+### Documentation
+
+- Updated README to v0.22.0 and 22/24 completed milestones.
+- Updated roadmap and next milestone references.
+- Added observability to the framework capability index.
+
+
 ## [0.21.0] - 2026-08-26
 
 ### Added
