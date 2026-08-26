@@ -1,8 +1,8 @@
 # Automation Diary Framework
 
-**Project Status:** Framework Saga — 21 of 24 milestones completed
-**Current Version:** `v0.21.0`\
-**Next Milestone:** `#022 — Reporting, Evidence, and Execution Observability`
+**Project Status:** Framework Saga — 22 of 24 milestones completed
+**Current Version:** `v0.22.0`\
+**Next Milestone:** `#023 — Production-Readiness and Framework Governance`
 
 ## About This Project
 
@@ -309,6 +309,12 @@ Sensitive runtime values are resolved through the centralized secure configurati
 Real passwords, tokens, API keys, private credentials, and session secrets are never committed to the repository. Local execution supplies them through environment variables, while CI environments can inject them through protected secret stores.
 
 See [Secrets and Secure Test Configuration](docs/architecture/secrets-and-secure-configuration.md).
+
+### Execution Observability
+
+Executions now use a shared observability contract for traceable execution identifiers, report locations, evidence directories, deterministic artifact names, and structured execution metadata.
+
+See [Reporting, Evidence, and Execution Observability](docs/architecture/reporting-evidence-and-observability.md).
 
 ## Project Structure
 

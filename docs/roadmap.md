@@ -49,4 +49,4 @@ Automation Diary #017 — How I Organize End-to-End Scenarios — implemented in
 - #020 — Parallel Execution and Execution Strategy — ✅ v0.20.0
 
 - ✅ #021 — Secrets and Secure Test Configuration — v0.21.0
-- ⏳ #022 — Reporting, Evidence, and Execution Observability — Next
+- ✅ #022 — Reporting, Evidence, and Execution Observability — v0.22.0
