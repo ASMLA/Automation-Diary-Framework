@@ -1,8 +1,8 @@
 # Automation Diary Framework
 
-**Project Status:** Framework Saga — 22 of 24 milestones completed
-**Current Version:** `v0.22.0`\
-**Next Milestone:** `#023 — Production-Readiness and Framework Governance`
+**Project Status:** Framework Saga — 23 of 24 milestones completed
+**Current Version:** `v0.23.0`\
+**Next Milestone:** `#024 — Framework Finalization and First Saga Retrospective`
 
 ## About This Project
 
@@ -315,6 +315,12 @@ See [Secrets and Secure Test Configuration](docs/architecture/secrets-and-secure
 Executions now use a shared observability contract for traceable execution identifiers, report locations, evidence directories, deterministic artifact names, and structured execution metadata.
 
 See [Reporting, Evidence, and Execution Observability](docs/architecture/reporting-evidence-and-observability.md).
+
+### Production Readiness and Governance
+
+The framework now has an explicit readiness gate covering framework health, flaky behavior, documentation synchronization, CI status, and secret protection.
+
+See [Production-Readiness and Framework Governance](docs/architecture/production-readiness-and-framework-governance.md).
 
 ## Project Structure
 

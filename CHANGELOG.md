@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.23.0] - 2026-08-27
+
+### Added
+
+- Production-readiness and framework-governance capability.
+- Central governance variables.
+- Generic readiness criteria and evaluation.
+- Traceable governance metadata.
+- Framework-level readiness validation.
+- Generic production-readiness template.
+- Architecture and Automation Diary #023 documentation.
+
+### Governance
+
+- CI remains a release gate.
+- Documentation synchronization is part of release readiness.
+- Secret protection is part of production readiness.
+- Flaky behavior is treated as a governance concern.
+- Application onboarding must preserve established framework contracts.
+
+### Documentation
+
+- README synchronized with v0.23.0.
+- Roadmap synchronized with 23/24 milestones completed.
+- #024 marked as the final milestone of Saga 1.
+
+
 ## [0.22.0] - 2026-08-26
 
 ### Added
