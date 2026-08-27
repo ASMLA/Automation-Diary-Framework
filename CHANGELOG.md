@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.24.0] - 2026-08-27
+
+### Added
+
+- Final framework baseline documentation.
+- Saga 1 final retrospective.
+- Final architectural baseline sanity validation.
+- Explicit application-onboarding readiness boundary.
+- Automation Diary #024 documentation.
+
+### Changed
+
+- README synchronized with `v0.24.0` and 24/24 completed milestones.
+- Roadmap closed for Saga 1 and prepared for Saga 2.
+- Project retrospective linked to the complete Saga 1 retrospective.
+- Framework architecture and engineering principles consolidated as the official Saga 1 baseline.
+
+### Milestone
+
+Automation Diary #024 — Framework Finalization and First Saga Retrospective.
+
+Saga 1 is officially complete. The generic automation framework baseline is ready for real application onboarding.
+
+
 ## [0.23.0] - 2026-08-27
 
 ### Added

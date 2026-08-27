@@ -50,3 +50,10 @@ The sprint delivered a documented and executable framework foundation with clear
 Sprint 1 achieved its intended goal: create a foundation that can grow without forcing every future feature to redesign the framework.
 
 The next phase should preserve these boundaries while adding real business functionality.
+
+
+## Saga 1 Closure — v0.24.0
+
+The original Sprint 1 foundation evolved through 24 Automation Diary milestones into the completed generic framework baseline. Saga 1 is now closed at `v0.24.0`. The complete retrospective is available in [Saga 1 Final Retrospective](saga-1-final-retrospective.md).
+
+The next phase is Saga 2 — Real Application Onboarding.
