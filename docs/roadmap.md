@@ -2,7 +2,7 @@
 
 ## Current strategy
 
-The first Automation Diary saga builds the generic automation framework through episode #024. The goal is to reach a complete platform with defined patterns for Web, API, Smoke, Functional, Integration, E2E, data, reporting, CI/CD, parallel execution, containers, documentation, and metrics.
+- ⏳ #024 — Framework Finalization and First Saga Retrospective — Next
 
 Real application onboarding begins only after the generic framework reaches its v1.0 milestone.
 
@@ -22,11 +22,11 @@ Real application onboarding begins only after the generic framework reaches its 
 | #017 | How I Organize End-to-End Scenarios | 🔄 Current — E2E contracts and orchestration |
 | #018 | Measuring Automation Success Beyond Test Coverage | Next — reliability, feedback time, maintenance cost, metrics |
 
-Episodes #019 through #024 will complete the remaining production-readiness capabilities required for the generic framework v1.0, including the final integration of execution, environment/secrets strategy, parallelization/containerization, quality gates, and stable release readiness. Their exact titles will be finalized as the preceding architecture is implemented.
+- ⏳ #024 — Framework Finalization and First Saga Retrospective — Next
 
 ## Saga 1 outcome
 
-At the end of #024, the framework should be ready for a real application to be onboarded by adding:
+- ⏳ #024 — Framework Finalization and First Saga Retrospective — Next
 
 - real environment configuration;
 - real Page Objects and locators;
